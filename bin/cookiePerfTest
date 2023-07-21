@@ -1,0 +1,69 @@
+#!/usr/bin/php
+<?php
+/*******************************************************************************
+ *
+ * $Id: cookiePerfTest 79018 2013-09-19 00:06:03Z rcallaha $
+ * $Date: 2013-09-18 20:06:03 -0400 (Wed, 18 Sep 2013) $
+ * $Author: rcallaha $
+ * $Revision: 79018 $
+ * $HeadURL: https://svn.ultradns.net/svn/sts_tools/sts-lib/trunk/bin/cookiePerfTest $
+ *
+ *******************************************************************************
+ */
+
+include __DIR__ . "/../config/global.php";
+
+use STS\CMDB\CMDBServerTable;
+
+try
+{
+	$startTime = time();
+	$queryStartTime = time();
+
+    $table = new CMDBServerTable();
+    $servers = $table->getAllByNameLike('xm');
+    $numRecs = count($servers);
+
+    $queryEndTime = time();
+
+    $i = 0;
+    foreach ($servers as $s) {
+        $i++;
+        print $i . " - " . $s->getName() . "\n";
+        $x = $table->getByName($s->getName());
+        $x = $table->getBySysId($s->getSysId());
+    }
+
+	$endTime = time();
+	$elapsedSecs = $endTime - $startTime;
+	$elapsedFormat = sprintf("%02d:%02d", floor($elapsedSecs / 60), $elapsedSecs % 60);
+
+	$endTime = time();
+	$elapsedSecs = $queryEndTime - $queryStartTime;
+	$queryElapsedFormat = sprintf("%02d:%02d", floor($elapsedSecs / 60), $elapsedSecs % 60);
+
+	print
+	sprintf("%-30s: %s\n", "Records", $numRecs) .
+    "\n" .
+	sprintf("%-30s: %s\n", "Query Start Time", date("Y-m-d H:i:s", $queryStartTime)) .
+    sprintf("%-30s: %s\n", "Query End Time", date("Y-m-d H:i:s", $queryEndTime)) .
+    sprintf("%-30s: %s\n", "Query Elapsed Time", $queryElapsedFormat) .
+    "\n" .
+	sprintf("%-30s: %s\n", "Start Time", date("Y-m-d H:i:s", $startTime)) .
+    sprintf("%-30s: %s\n", "End Time", date("Y-m-d H:i:s", $endTime)) .
+    sprintf("%-30s: %s\n", "Elapsed Time", $elapsedFormat) . "\n";
+}
+catch(Exception $e)
+{
+	print_r(
+		array(
+			"returnCode" => 1,
+			"errorCode"  => $e->getCode(),
+			"errorText"  => $e->getMessage(),
+			"errorFile"  => $e->getFile(),
+			"errorLine"  => $e->getLine(),
+			"errorStack" => $e->getTraceAsString()
+			)
+		);
+}
+?>

@@ -1,0 +1,47 @@
+#!/usr/bin/php
+<?php
+/*******************************************************************************
+ *
+ * $Id: dostuff 79265 2013-09-25 17:09:30Z rcallaha $
+ * $Date: 2013-09-25 13:09:30 -0400 (Wed, 25 Sep 2013) $
+ * $Author: rcallaha $
+ * $Revision: 79265 $
+ * $HeadURL: https://svn.ultradns.net/svn/sts_tools/sts-lib/trunk/test/bin/dostuff $
+ *
+ *******************************************************************************
+ */
+
+require_once __DIR__ . "/../bootstrap.php";
+
+try
+{
+
+    $config = require __DIR__ . "/../../config/config.php";
+
+    $adapter = new Zend\Db\Adapter\Adapter(array(
+        'driver' => 'Mysqli',
+        'database' => 'dbtest',
+        'username' => 'unittest',
+        'password' => 'testunit'
+     ));
+
+    $results = $adapter->query('SELECT * FROM `user` WHERE `id` = 1', $adapter::QUERY_MODE_EXECUTE);
+
+    $row = $results->current();
+    print $row['lastName'] . "\n";
+}
+
+catch(Exception $e)
+{
+	print_r(
+		array(
+			"returnCode" => 1,
+			"errorCode"  => $e->getCode(),
+			"errorText"  => $e->getMessage(),
+			"errorFile"  => $e->getFile(),
+			"errorLine"  => $e->getLine(),
+			"errorStack" => $e->getTraceAsString()
+			)
+		);
+}
+?>

@@ -1,0 +1,138 @@
+{
+
+    "uri": "/ibm/director/rest/resources/Server/83044",
+    "OID": 83044,
+    "ObjectType": "Server",
+    "Name": "06A-U20-chbkup2-new-10EF7B3",
+    "ResourceDefinition": "/ibm/director/rest/resourcedefinitions/Server/com.ibm.sysmgt.platform.PhysicalPlatformFactory",
+    "Properties": {
+        "HypervisorPlatformRoleSet": null,
+        "VirtualServerCapabilities": null,
+        "HypervisorPlatformType": 8,
+        "Virtual": false,
+        "HypervisorPlatformVersion": null,
+        "MaximumSuspendCapableLPARs": 0,
+        "VMID": null,
+        "RemoteRestartStatus": null,
+        "MaximumRemoteRestartCapableLPARs": 0,
+        "PowerMgmtCapabilities": "0",
+        "PlatformManagerVersion": null,
+        "SoftwareType": null,
+        "MachineType": "8204",
+        "Model": "E8A",
+        "AssetTag": null,
+        "Employed": null,
+        "Dedicated": null,
+        "LastBootUpTime": null,
+        "SoftwareVersion": null,
+        "Manufacturer": "IBM",
+        "SystemBoardUUID": null,
+        "Architecture": "ppc64",
+        "Encapsulated": null,
+        "PrimaryHostName": null,
+        "ProductName": null,
+        "PartNumber": null,
+        "SerialNumber": "10EF7B3",
+        "DetailedState": 0,
+        "MACAddress": null,
+        "NodeName": null,
+        "AccessState": "Unlocked",
+        "PrimaryOwnerContact": null,
+        "IPv4Address": null,
+        "OperatingState": 8,
+        "HostName": null,
+        "HealthState": null,
+        "CommunicationState": 2,
+        "PrimaryOwnerName": null,
+        "SupportsSystemProfiles": null,
+        "ChangedDate": {
+            "Date": 1361546915000
+        },
+        "DisplayName": "06A-U20-chbkup2-new-10EF7B3",
+        "CreatedDate": {
+            "Date": 1350315667000
+        },
+        "Locale": null,
+        "Description": null,
+        "CurrentTimeZone": -1,
+        "DisplayPingTime": 3,
+        "DisplayOperationalStatusTime": 3,
+        "SuspendEventActions": false,
+        "EnclosureFRU": null,
+        "ServerType": "HMCManagedServer",
+        "MgmtHwType": null,
+        "InstalledOSDisplayName": null,
+        "OccupiedSlots": null,
+        "MCTextID": null,
+        "ChassisName": null,
+        "MCFRU": null,
+        "MCSerialNumber": null,
+        "ChassisSlot": null,
+        "Members": null,
+        "CIMNameSpace": null,
+        "ComplexOID": null,
+        "BootFlags": null,
+        "BootPath": null,
+        "PrimaryNodeOID": null,
+        "ID": null,
+        "ExpectedChassis": null,
+        "PartitionState": null
+    },
+    "RelatedServices": {
+        "VLANSettings": {
+            "uri": "/ibm/director/rest/resources/Server/83044/vlansettings"
+        },
+        "ConfigDefinitions": {
+            "uri": "/ibm/director/rest/resources/Server/83044/ConfigDefinitions"
+        },
+        "ActiveEnergySavingsCalculator": {
+            "uri": "/ibm/director/rest/resources/Server/83044/energysavings"
+        },
+        "ActiveEnergyPowerSavingsPolicies": {
+            "uri": "/ibm/director/rest/resources/Server/83044/energypolicies/powersavings"
+        },
+        "ActiveEnergyPowerCappingPolicies": {
+            "uri": "/ibm/director/rest/resources/Server/83044/energypolicies/powercap"
+        },
+        "ActiveEnergyPowerSavings": {
+            "uri": "/ibm/director/rest/resources/Server/83044/powersavings"
+        },
+        "ActiveEnergyPowerCap": {
+            "uri": "/ibm/director/rest/resources/Server/83044/powercap"
+        },
+        "ActiveEnergyProperties": {
+            "uri": "/ibm/director/rest/resources/Server/83044/energyproperties"
+        },
+        "InventoryProfiles": {
+            "uri": "/ibm/director/rest/resources/Server/83044/inventoryprofiles"
+        },
+        "Systemaccess": {
+            "uri": "/ibm/director/rest/resources/Server/83044/access"
+        },
+        "RelatedResources": {
+            "uri": "/ibm/director/rest/resources/Server/83044/relatedresources"
+        },
+        "Tasks": {
+            "uri": "/ibm/director/rest/resources/Server/83044/tasks"
+        },
+        "Jobs": {
+            "uri": "/ibm/director/rest/resources/Server/83044/jobs"
+        },
+        "Status": {
+            "uri": "/ibm/director/rest/resources/Server/83044/status"
+        },
+        "MonitorViews": {
+            "uri": "/ibm/director/rest/resources/Server/83044/monitorviews"
+        },
+        "Monitors": {
+            "uri": "/ibm/director/rest/resources/Server/83044/monitors"
+        },
+        "Events": {
+            "uri": "/ibm/director/rest/resources/Server/83044/events"
+        },
+        "ActiveEnergySettings": {
+            "uri": "/ibm/director/rest/energysettings"
+        }
+    }
+
+}

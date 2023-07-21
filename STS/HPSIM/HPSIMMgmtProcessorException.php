@@ -1,0 +1,127 @@
+<?php
+/*******************************************************************************
+ *
+ * $Id: HPSIMMgmtProcessorException.php 74541 2013-04-19 16:45:04Z rcallaha $
+ * $Date: 2013-04-19 12:45:04 -0400 (Fri, 19 Apr 2013) $
+ * $Author: rcallaha $
+ * $Revision: 74541 $
+ * $HeadURL: https://svn.ultradns.net/svn/sts_tools/sts-lib/trunk/STS/HPSIM/HPSIMMgmtProcessorException.php $
+ *
+ *******************************************************************************
+ */
+
+namespace STS\HPSIM;
+
+class HPSIMMgmtProcessorException
+{
+	protected $id;
+	protected $mgmtProcessorId;
+
+	protected $exceptionTypeId;
+
+	protected $exceptionTypeNumber;
+	protected $exceptionTypeDescr;
+
+	protected $dateUpdated;
+	protected $userUpdated;
+
+
+	public function __toString()
+	{
+		$return = "";
+		foreach (HPSIMMgmtProcessorExceptionTable::getColumnNames() as $prop) {
+			$return .= sprintf("%-25s => %s\n", $prop, $this->$prop);
+		}
+		return $return;
+	}
+
+	public function toObject()
+	{
+		$obj = (object) array();
+		foreach (HPSIMMgmtProcessorExceptionTable::getColumnNames() as $prop)
+		{
+			$obj->$prop = $this->get($prop);
+		}
+		return $obj;
+	}
+
+	// *******************************************************************************
+	// Getters and Setters
+	// *******************************************************************************
+
+	public function get($prop)
+	{
+		return $this->$prop;
+	}
+
+	public function set($prop, $value)
+	{
+		return $this->$prop = $value;
+	}
+
+	public function setMgmtProcessorId($mgmtProcessorId) {
+		$this->mgmtProcessorId = $mgmtProcessorId;
+	}
+
+	public function getMgmtProcessorId() {
+		return $this->mgmtProcessorId;
+	}
+
+	public function setDateUpdated($dateUpdated)
+	{
+		$this->dateUpdated = $dateUpdated;
+	}
+
+	public function getDateUpdated()
+	{
+		return $this->dateUpdated;
+	}
+
+	public function setExceptionTypeDescr($exceptionTypeDescr)
+	{
+		$this->exceptionTypeDescr = $exceptionTypeDescr;
+	}
+
+	public function getExceptionTypeDescr()
+	{
+		return $this->exceptionTypeDescr;
+	}
+
+	public function setExceptionTypeId($exceptionTypeId)
+	{
+		$this->exceptionTypeId = $exceptionTypeId;
+	}
+
+	public function getExceptionTypeId()
+	{
+		return $this->exceptionTypeId;
+	}
+
+	public function setExceptionTypeNumber($exceptionTypeNumber) {
+		$this->exceptionTypeNumber = $exceptionTypeNumber;
+	}
+
+	public function getExceptionTypeNumber() {
+		return $this->exceptionTypeNumber;
+	}
+
+	public function setId($id)
+	{
+		$this->id = $id;
+	}
+
+	public function getId()
+	{
+		return $this->id;
+	}
+
+	public function setUserUpdated($userUpdated)
+	{
+		$this->userUpdated = $userUpdated;
+	}
+
+	public function getUserUpdated()
+	{
+		return $this->userUpdated;
+	}
+}

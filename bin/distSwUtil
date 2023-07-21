@@ -1,0 +1,45 @@
+#!/usr/bin/php
+<?php
+/*******************************************************************************
+ *
+ * $Id: distSwUtil 77524 2013-08-05 16:53:18Z rcallaha $
+ * $Date: 2013-08-05 12:53:18 -0400 (Mon, 05 Aug 2013) $
+ * $Author: rcallaha $
+ * $Revision: 77524 $
+ * $HeadURL: https://svn.ultradns.net/svn/sts_tools/sts-lib/trunk/bin/distSwUtil $
+ *
+ *******************************************************************************
+ */
+
+include __DIR__ . "/../config/global.php";
+
+use STS\Util\DistSwitchLookup;
+
+try
+{
+    $distSwLookup = new DistSwitchLookup();
+    $map = $distSwLookup->getSwitchMap();
+
+    foreach ($map as $name => $obj) {
+        print "{$name}\n";
+        sort($obj->networks);
+        for ($i=0; $i<count($obj->networks); $i++) {
+            print "\t{$obj->networks[$i]}\n";
+        }
+    }
+}
+
+catch(Exception $e)
+{
+	print_r(
+		array(
+			"returnCode" => 1,
+			"errorCode"  => $e->getCode(),
+			"errorText"  => $e->getMessage(),
+			"errorFile"  => $e->getFile(),
+			"errorLine"  => $e->getLine(),
+			"errorStack" => $e->getTraceAsString()
+			)
+		);
+}
+?>

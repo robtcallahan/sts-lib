@@ -1,0 +1,172 @@
+<?php
+
+namespace STS\SNCache;
+
+class Manufacturer
+{
+	protected $sysId;
+	protected $sysClassName;
+
+	protected $name;
+
+	protected $sysCreatedBy;
+	protected $sysCreatedOn;
+    protected $sysUpdatedBy;
+    protected $sysUpdatedOn;
+
+    protected $changes = array();
+
+
+    public function __toString()
+   	{
+           $return = "";
+           foreach (get_class_vars(__CLASS__) as $prop => $x) {
+               if (property_exists($this, $prop)) {
+                   $return .= sprintf("%-25s => %s\n", $prop, $this->$prop);
+               }
+           }
+           return $return;
+   	}
+
+   	public function toObject()
+   	{
+           $obj = (object)array();
+           foreach (get_class_vars(__CLASS__) as $prop => $x) {
+               if (property_exists($this, $prop)) {
+                   $obj->$prop = $this->$prop;
+               }
+           }
+           return $obj;
+   	}
+
+
+	// *******************************************************************************
+	// * Getters and Setters
+	// *****************************************************************************
+
+	public function get($prop)
+	{
+		return $this->$prop;
+	}
+
+	public function set($prop, $value)
+	{
+		return $this->$prop = $value;
+	}
+
+    public function getChanges()
+    {
+        return $this->changes;
+    }
+
+    public function clearChanges()
+    {
+        $this->changes = array();
+    }
+
+    private function updateChanges($value)
+    {
+        $trace = debug_backtrace();
+
+        // get the calling method name, eg., setSysId
+        $callerMethod = $trace[1]["function"];
+
+        // perform a replace to remove "set" from the method name and change first letter to lowercase
+        // so, setSysId becomes sysId. This will be the property name that needs to be added to the changes array
+        $prop = preg_replace_callback(
+            "/^set(\w)/",
+            function($matches) {
+                return strtolower($matches[1]);
+            },
+            $callerMethod
+        );
+
+        // update the changes array to keep track of this properties orig and new values
+        if (!array_key_exists($prop, $this->changes)) {
+            $this->changes[$prop] = (object) array(
+                'originalValue' => $this->$prop,
+                'modifiedValue' => $value
+            );
+        } else {
+            $this->changes[$prop]->modifiedValue = $value;
+        }
+    }
+
+	public function setName($name)
+	{
+        $this->updateChanges(func_get_arg(0));
+		$this->name = $name;
+	}
+
+	public function getName()
+	{
+		return $this->name;
+	}
+
+	public function setSysClassName($sysClassName)
+	{
+        $this->updateChanges(func_get_arg(0));
+		$this->sysClassName = $sysClassName;
+	}
+
+	public function getSysClassName()
+	{
+		return $this->sysClassName;
+	}
+
+	public function setSysCreatedBy($sysCreatedBy)
+	{
+        $this->updateChanges(func_get_arg(0));
+		$this->sysCreatedBy = $sysCreatedBy;
+	}
+
+	public function getSysCreatedBy()
+	{
+		return $this->sysCreatedBy;
+	}
+
+	public function setSysCreatedOn($sysCreatedOn)
+	{
+        $this->updateChanges(func_get_arg(0));
+		$this->sysCreatedOn = $sysCreatedOn;
+	}
+
+	public function getSysCreatedOn()
+	{
+		return $this->sysCreatedOn;
+	}
+
+	public function setSysId($sysId)
+	{
+        $this->updateChanges(func_get_arg(0));
+		$this->sysId = $sysId;
+	}
+
+	public function getSysId()
+	{
+		return $this->sysId;
+	}
+
+	public function setSysUpdatedBy($sysUpdatedBy)
+	{
+        $this->updateChanges(func_get_arg(0));
+		$this->sysUpdatedBy = $sysUpdatedBy;
+	}
+
+	public function getSysUpdatedBy()
+	{
+		return $this->sysUpdatedBy;
+	}
+
+	public function setSysUpdatedOn($sysUpdatedOn)
+	{
+        $this->updateChanges(func_get_arg(0));
+		$this->sysUpdatedOn = $sysUpdatedOn;
+	}
+
+	public function getSysUpdatedOn()
+	{
+		return $this->sysUpdatedOn;
+	}
+
+}

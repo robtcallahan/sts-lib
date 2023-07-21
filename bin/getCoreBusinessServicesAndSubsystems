@@ -1,0 +1,121 @@
+#!/usr/bin/php
+<?php
+/*******************************************************************************
+ *
+ * $Id: codeTest 76977 2013-07-18 16:41:20Z rcallaha $
+ * $Date: 2013-07-18 12:41:20 -0400 (Thu, 18 Jul 2013) $
+ * $Author: rcallaha $
+ * $Revision: 76977 $
+ * $HeadURL: https://svn.ultradns.net/svn/sts_tools/sts-lib/trunk/bin/codeTest $
+ *
+ *******************************************************************************
+ */
+
+include __DIR__ . "/../config/global.php";
+
+use STS\CMDB\CMDBBusinessService;
+use STS\CMDB\CMDBBusinessServiceTable;
+
+use STS\CMDB\CMDBSubsystem;
+use STS\CMDB\CMDBSubsystemTable;
+
+use STS\CMDB\CMDBServerTable;
+
+use STS\CMDB\CMDBUserGroupTable;
+use STS\CMDB\CMDBUserTable;
+
+$coreBSExcludes = array(
+    "Archer",
+    "Digger",
+    "Directory Search",
+    "EIE",
+    "ENUM",
+    "GDI",
+    "Generic PKI/CA",
+    "itRS",
+    "Licensed OMS",
+    "MDTV",
+    "MediaOps",
+    "Microsoft",
+    "Mobile Cloud",
+    "NeuStar-Labs",
+    "NIS",
+    "Office/Facilities",
+    "Pathfinder",
+    "SIP-IX",
+    "Site Protect",
+    "Telecom",
+    "Text Everywhere",
+    "Ultra",
+    "Webmetrics",
+    "WMRS",
+    );
+
+try
+{
+
+    function sortBSByName(CMDBBusinessService $a, CMDBBusinessService $b) {
+        return strcmp($a->getName(), $b->getName());
+    }
+
+    function sortSSByName(CMDBSubsystem $a, CMDBSubsystem $b) {
+        return strcmp($a->getName(), $b->getName());
+    }
+
+
+    $bsTable = new CMDBBusinessServiceTable();
+    $subsystemTable = new CMDBSubsystemTable();
+    $userGroupTable = new CMDBUserGroupTable();
+    $userTable = new CMDBUserTable();
+    $serverTable = new CMDBServerTable();
+
+	$query = rawurlencode("operational_status!=2^nameNOT LIKE" . implode("^nameNOT LIKE", $coreBSExcludes));
+    $services = $bsTable->getByQuery($query);
+
+    usort($services, 'sortBSByName');
+
+    print "Business Service,Ops Leader,Sys Admin Leader,Subsystem,Sys Admin Manager,Sys Admin Group,Ops Support Group,Owning Support Mgr,Hosts\n";
+    foreach ($services as $service) {
+        // get the subsystems
+        $subsystems = $subsystemTable->getByBusinessServiceId($service->getSysId());
+        usort($subsystems, 'sortSSByName');
+
+        foreach ($subsystems as $subsystem) {
+            // get a list of hosts
+            $hosts = $serverTable->getBySubsystemId($subsystem->getSysId());
+            $hostNamesArray = array();
+            foreach ($hosts as $h) {
+                if (preg_match("/^([\w\d\-_]+)\..*$/", $h->getName(), $m)) {
+                    $hostNamesArray[] = $m[1];
+                } else {
+                    $hostNamesArray[] = $h->getName();
+                }
+            }
+            print $service->getName() . "," .
+                $service->getOperationsLeader() . "," .
+                $service->getSystemsAdminLeader() . "," .
+                $subsystem->getName() . "," .
+                $subsystem->getSystemsAdminManager() . "," .
+                $subsystem->getSystemsAdminGroup() . "," .
+                $subsystem->getOperationsSupportGroup() . "," .
+                $subsystem->getOwningSupportManager() . "," .
+                implode(',', $hostNamesArray) .
+                "\n";
+        }
+    }
+ }
+
+catch(Exception $e)
+{
+	print_r(
+		array(
+			"returnCode" => 1,
+			"errorCode"  => $e->getCode(),
+			"errorText"  => $e->getMessage(),
+			"errorFile"  => $e->getFile(),
+			"errorLine"  => $e->getLine(),
+			"errorStack" => $e->getTraceAsString()
+			)
+		);
+}
+?>

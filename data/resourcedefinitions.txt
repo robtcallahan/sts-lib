@@ -1,0 +1,2258 @@
+Array
+(
+    [0] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/GenericNetworkDevice/com.ibm.usmi.kernel.hms.ReferenceManageableEndpointFactory
+            [ObjectType] => GenericNetworkDevice
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => com.ibm.usmi.kernel.hms.ReferenceManageableEndpointFactory
+        )
+
+    [1] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SoftwarePatch/SoftwarePatch
+            [ObjectType] => SoftwarePatch
+            [Category] => Array
+                (
+                    [0] => Software
+                )
+
+            [MCType] => SoftwarePatch
+        )
+
+    [2] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SoftwarePatchCollection/SoftwarePatchCollection
+            [ObjectType] => SoftwarePatchCollection
+            [Category] => Array
+                (
+                    [0] => Software
+                )
+
+            [MCType] => SoftwarePatchCollection
+        )
+
+    [3] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/ComputerSystem/com.tivoli.twg.engine.TWGManagedObjectFactory
+            [ObjectType] => ComputerSystem
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => com.tivoli.twg.engine.TWGManagedObjectFactory
+        )
+
+    [4] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Server/com.ibm.sysmgt.platform.PhysicalPlatformFactory
+            [ObjectType] => Server
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => com.ibm.sysmgt.platform.PhysicalPlatformFactory
+        )
+
+    [5] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/OperatingSystem/com.ibm.usmi.systems.endpoint.SystemsManageableEndpointFactory
+            [ObjectType] => OperatingSystem
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => com.ibm.usmi.systems.endpoint.SystemsManageableEndpointFactory
+        )
+
+    [6] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Chassis/com.tivoli.twg.engine.TWGManagedObjectFactory
+            [ObjectType] => Chassis
+            [Category] => Array
+                (
+                )
+
+            [MCType] => com.tivoli.twg.engine.TWGManagedObjectFactory
+        )
+
+    [7] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/ComputerSystem/com.ibm.usmi.kernel.managedobject.DefaultSAPManagedObjectFactory
+            [ObjectType] => ComputerSystem
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => com.ibm.usmi.kernel.managedobject.DefaultSAPManagedObjectFactory
+        )
+
+    [8] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Server/com.ibm.sysmgt.platform.PlatformFactory
+            [ObjectType] => Server
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => com.ibm.sysmgt.platform.PlatformFactory
+        )
+
+    [9] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Cluster/com.ibm.sysmgt.spm.server.complex.ComplexFactory
+            [ObjectType] => Cluster
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => com.ibm.sysmgt.spm.server.complex.ComplexFactory
+        )
+
+    [10] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/GenericNetworkDevice/GenericNetworkDevice
+            [ObjectType] => GenericNetworkDevice
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => GenericNetworkDevice
+        )
+
+    [11] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SystemChassis/com.ibm.usmi.kernel.managedobject.DefaultSAPManagedObjectFactory
+            [ObjectType] => SystemChassis
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => com.ibm.usmi.kernel.managedobject.DefaultSAPManagedObjectFactory
+        )
+
+    [12] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Server/com.ibm.sysmgt.platform.LogicalPlatformFactory
+            [ObjectType] => Server
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => com.ibm.sysmgt.platform.LogicalPlatformFactory
+        )
+
+    [13] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Server/com.ibm.sysmgt.spm.server.partition.PartitionFactory
+            [ObjectType] => Server
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => com.ibm.sysmgt.spm.server.partition.PartitionFactory
+        )
+
+    [14] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SystemChassis/SystemChassis
+            [ObjectType] => SystemChassis
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => SystemChassis
+        )
+
+    [15] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/HardwareManagementConsole/com.ibm.usmi.kernel.managedobject.DefaultSAPManagedObjectFactory
+            [ObjectType] => HardwareManagementConsole
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => com.ibm.usmi.kernel.managedobject.DefaultSAPManagedObjectFactory
+        )
+
+    [16] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Switch/com.ibm.sysmgt.nwswitch.SwitchManageableEndpointFactory
+            [ObjectType] => Switch
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => com.ibm.sysmgt.nwswitch.SwitchManageableEndpointFactory
+        )
+
+    [17] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/PassThroughModule/PassThroughModule
+            [ObjectType] => PassThroughModule
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => PassThroughModule
+        )
+
+    [18] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Farm/TPCFarm
+            [ObjectType] => Farm
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => TPCFarm
+        )
+
+    [19] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/StorageSubsystem/StorageSubsystem
+            [ObjectType] => StorageSubsystem
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => StorageSubsystem
+        )
+
+    [20] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/HardwareManagementConsole/HardwareManagementConsole
+            [ObjectType] => HardwareManagementConsole
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => HardwareManagementConsole
+        )
+
+    [21] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/HybridSystem/HybridSystem
+            [ObjectType] => HybridSystem
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => HybridSystem
+        )
+
+    [22] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/PowerUnit/PowerUnit
+            [ObjectType] => PowerUnit
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => PowerUnit
+        )
+
+    [23] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SystemPool/SystemPool
+            [ObjectType] => SystemPool
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => SystemPool
+        )
+
+    [24] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SystemPool/com.ibm.director.services.storage.virtualization.stsyspoolmep.StSysPoolEndpointFactory
+            [ObjectType] => SystemPool
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => com.ibm.director.services.storage.virtualization.stsyspoolmep.StSysPoolEndpointFactory
+        )
+
+    [25] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/ManagedElement/ManagedElement
+            [ObjectType] => ManagedElement
+            [Category] => Array
+                (
+                    [0] => Core
+                )
+
+            [MCType] => ManagedElement
+        )
+
+    [26] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Collection/Collection
+            [ObjectType] => Collection
+            [Category] => Array
+                (
+                    [0] => Core
+                )
+
+            [MCType] => Collection
+        )
+
+    [27] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/LogicalElement/LogicalElement
+            [ObjectType] => LogicalElement
+            [Category] => Array
+                (
+                    [0] => Core
+                )
+
+            [MCType] => LogicalElement
+        )
+
+    [28] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/PhysicalElement/PhysicalElement
+            [ObjectType] => PhysicalElement
+            [Category] => Array
+                (
+                    [0] => Core
+                )
+
+            [MCType] => PhysicalElement
+        )
+
+    [29] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Settings/Settings
+            [ObjectType] => Settings
+            [Category] => Array
+                (
+                    [0] => Core
+                )
+
+            [MCType] => Settings
+        )
+
+    [30] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/RelatedData/RelatedData
+            [ObjectType] => RelatedData
+            [Category] => Array
+                (
+                    [0] => Core
+                )
+
+            [MCType] => RelatedData
+        )
+
+    [31] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Policy/Policy
+            [ObjectType] => Policy
+            [Category] => Array
+                (
+                    [0] => Core
+                )
+
+            [MCType] => Policy
+        )
+
+    [32] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/System/System
+            [ObjectType] => System
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => System
+        )
+
+    [33] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/AdminDomain/AdminDomain
+            [ObjectType] => AdminDomain
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => AdminDomain
+        )
+
+    [34] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/ComputerSystem/ComputerSystem
+            [ObjectType] => ComputerSystem
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => ComputerSystem
+        )
+
+    [35] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/OperatingSystem/OperatingSystem
+            [ObjectType] => OperatingSystem
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => OperatingSystem
+        )
+
+    [36] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Fabric/Fabric
+            [ObjectType] => Fabric
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => Fabric
+        )
+
+    [37] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Farm/Farm
+            [ObjectType] => Farm
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => Farm
+        )
+
+    [38] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/PowerDomain/PowerDomain
+            [ObjectType] => PowerDomain
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => PowerDomain
+        )
+
+    [39] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SAN/SAN
+            [ObjectType] => SAN
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => SAN
+        )
+
+    [40] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/WorkloadInstance/WorkloadInstance
+            [ObjectType] => WorkloadInstance
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => WorkloadInstance
+        )
+
+    [41] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Cluster/Cluster
+            [ObjectType] => Cluster
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => Cluster
+        )
+
+    [42] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/CoolingUnit/CoolingUnit
+            [ObjectType] => CoolingUnit
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => CoolingUnit
+        )
+
+    [43] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/HardwareControlPoint/HardwareControlPoint
+            [ObjectType] => HardwareControlPoint
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => HardwareControlPoint
+        )
+
+    [44] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Server/Server
+            [ObjectType] => Server
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => Server
+        )
+
+    [45] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Switch/Switch
+            [ObjectType] => Switch
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => Switch
+        )
+
+    [46] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SystemContainer/SystemContainer
+            [ObjectType] => SystemContainer
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => SystemContainer
+        )
+
+    [47] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/BladeAdminServer/BladeAdminServer
+            [ObjectType] => BladeAdminServer
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => BladeAdminServer
+        )
+
+    [48] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/ManagementController/ManagementController
+            [ObjectType] => ManagementController
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => ManagementController
+        )
+
+    [49] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/CoolingDomain/CoolingDomain
+            [ObjectType] => CoolingDomain
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => CoolingDomain
+        )
+
+    [50] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Capability/Capability
+            [ObjectType] => Capability
+            [Category] => Array
+                (
+                    [0] => SystemRelated
+                )
+
+            [MCType] => Capability
+        )
+
+    [51] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/CapabilityGroup/CapabilityGroup
+            [ObjectType] => CapabilityGroup
+            [Category] => Array
+                (
+                    [0] => SystemRelated
+                )
+
+            [MCType] => CapabilityGroup
+        )
+
+    [52] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SystemContent/SystemContent
+            [ObjectType] => SystemContent
+            [Category] => Array
+                (
+                    [0] => SystemRelated
+                )
+
+            [MCType] => SystemContent
+        )
+
+    [53] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/File/File
+            [ObjectType] => File
+            [Category] => Array
+                (
+                    [0] => SystemRelated
+                )
+
+            [MCType] => File
+        )
+
+    [54] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/FileShare/FileShare
+            [ObjectType] => FileShare
+            [Category] => Array
+                (
+                    [0] => SystemRelated
+                )
+
+            [MCType] => FileShare
+        )
+
+    [55] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/FileSystem/FileSystem
+            [ObjectType] => FileSystem
+            [Category] => Array
+                (
+                    [0] => SystemRelated
+                )
+
+            [MCType] => FileSystem
+        )
+
+    [56] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Location/Location
+            [ObjectType] => Location
+            [Category] => Array
+                (
+                    [0] => SystemRelated
+                )
+
+            [MCType] => Location
+        )
+
+    [57] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Service/Service
+            [ObjectType] => Service
+            [Category] => Array
+                (
+                    [0] => SystemRelated
+                )
+
+            [MCType] => Service
+        )
+
+    [58] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SystemRole/SystemRole
+            [ObjectType] => SystemRole
+            [Category] => Array
+                (
+                    [0] => SystemRelated
+                )
+
+            [MCType] => SystemRole
+        )
+
+    [59] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SystemAssetSettings/SystemAssetSettings
+            [ObjectType] => SystemAssetSettings
+            [Category] => Array
+                (
+                    [0] => SystemRelated
+                )
+
+            [MCType] => SystemAssetSettings
+        )
+
+    [60] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/TimeZoneSettings/TimeZoneSettings
+            [ObjectType] => TimeZoneSettings
+            [Category] => Array
+                (
+                    [0] => SystemRelated
+                )
+
+            [MCType] => TimeZoneSettings
+        )
+
+    [61] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SystemPoolSettings/SystemPoolSettings
+            [ObjectType] => SystemPoolSettings
+            [Category] => Array
+                (
+                    [0] => SystemRelated
+                )
+
+            [MCType] => SystemPoolSettings
+        )
+
+    [62] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/PoolUplinkSettings/PoolUplinkSettings
+            [ObjectType] => PoolUplinkSettings
+            [Category] => Array
+                (
+                    [0] => SystemRelated
+                )
+
+            [MCType] => PoolUplinkSettings
+        )
+
+    [63] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/IPSubnet/IPSubnet
+            [ObjectType] => IPSubnet
+            [Category] => Array
+                (
+                    [0] => Network
+                )
+
+            [MCType] => IPSubnet
+        )
+
+    [64] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/NetworkVLAN/NetworkVLAN
+            [ObjectType] => NetworkVLAN
+            [Category] => Array
+                (
+                    [0] => Network
+                )
+
+            [MCType] => NetworkVLAN
+        )
+
+    [65] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/ServiceAccessPoint/ServiceAccessPoint
+            [ObjectType] => ServiceAccessPoint
+            [Category] => Array
+                (
+                    [0] => Network
+                )
+
+            [MCType] => ServiceAccessPoint
+        )
+
+    [66] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/ProtocolEndpoint/ProtocolEndpoint
+            [ObjectType] => ProtocolEndpoint
+            [Category] => Array
+                (
+                    [0] => Network
+                )
+
+            [MCType] => ProtocolEndpoint
+        )
+
+    [67] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/RemotePort/RemotePort
+            [ObjectType] => RemotePort
+            [Category] => Array
+                (
+                    [0] => Network
+                )
+
+            [MCType] => RemotePort
+        )
+
+    [68] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/RemoteServiceAccessPoint/RemoteServiceAccessPoint
+            [ObjectType] => RemoteServiceAccessPoint
+            [Category] => Array
+                (
+                    [0] => Network
+                )
+
+            [MCType] => RemoteServiceAccessPoint
+        )
+
+    [69] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/DNSProtocolEndpoint/DNSProtocolEndpoint
+            [ObjectType] => DNSProtocolEndpoint
+            [Category] => Array
+                (
+                    [0] => Network
+                )
+
+            [MCType] => DNSProtocolEndpoint
+        )
+
+    [70] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/IPProtocolEndpoint/IPProtocolEndpoint
+            [ObjectType] => IPProtocolEndpoint
+            [Category] => Array
+                (
+                    [0] => Network
+                )
+
+            [MCType] => IPProtocolEndpoint
+        )
+
+    [71] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/LANEndpoint/LANEndpoint
+            [ObjectType] => LANEndpoint
+            [Category] => Array
+                (
+                    [0] => Network
+                )
+
+            [MCType] => LANEndpoint
+        )
+
+    [72] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SCSIProtocolEndpoint/SCSIProtocolEndpoint
+            [ObjectType] => SCSIProtocolEndpoint
+            [Category] => Array
+                (
+                    [0] => Network
+                )
+
+            [MCType] => SCSIProtocolEndpoint
+        )
+
+    [73] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SwitchPort/SwitchPort
+            [ObjectType] => SwitchPort
+            [Category] => Array
+                (
+                    [0] => Network
+                )
+
+            [MCType] => SwitchPort
+        )
+
+    [74] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/TCPProtocolEndpoint/TCPProtocolEndpoint
+            [ObjectType] => TCPProtocolEndpoint
+            [Category] => Array
+                (
+                    [0] => Network
+                )
+
+            [MCType] => TCPProtocolEndpoint
+        )
+
+    [75] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/VLANEndpoint/VLANEndpoint
+            [ObjectType] => VLANEndpoint
+            [Category] => Array
+                (
+                    [0] => Network
+                )
+
+            [MCType] => VLANEndpoint
+        )
+
+    [76] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/WirelessLANEndpoint/WirelessLANEndpoint
+            [ObjectType] => WirelessLANEndpoint
+            [Category] => Array
+                (
+                    [0] => Network
+                )
+
+            [MCType] => WirelessLANEndpoint
+        )
+
+    [77] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SNMPTrapTarget/SNMPTrapTarget
+            [ObjectType] => SNMPTrapTarget
+            [Category] => Array
+                (
+                    [0] => Network
+                )
+
+            [MCType] => SNMPTrapTarget
+        )
+
+    [78] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/DNSSettings/DNSSettings
+            [ObjectType] => DNSSettings
+            [Category] => Array
+                (
+                    [0] => Network
+                )
+
+            [MCType] => DNSSettings
+        )
+
+    [79] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/VLANEndpointSettings/VLANEndpointSettings
+            [ObjectType] => VLANEndpointSettings
+            [Category] => Array
+                (
+                    [0] => Network
+                )
+
+            [MCType] => VLANEndpointSettings
+        )
+
+    [80] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/LogicalNetwork/LogicalNetwork
+            [ObjectType] => LogicalNetwork
+            [Category] => Array
+                (
+                    [0] => Network
+                )
+
+            [MCType] => LogicalNetwork
+        )
+
+    [81] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SoftwarePackage/SoftwarePackage
+            [ObjectType] => SoftwarePackage
+            [Category] => Array
+                (
+                    [0] => Software
+                )
+
+            [MCType] => SoftwarePackage
+        )
+
+    [82] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SoftwareInstallable/SoftwareInstallable
+            [ObjectType] => SoftwareInstallable
+            [Category] => Array
+                (
+                    [0] => Software
+                )
+
+            [MCType] => SoftwareInstallable
+        )
+
+    [83] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SoftwareModule/SoftwareModule
+            [ObjectType] => SoftwareModule
+            [Category] => Array
+                (
+                    [0] => Software
+                )
+
+            [MCType] => SoftwareModule
+        )
+
+    [84] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SoftwareResource/SoftwareResource
+            [ObjectType] => SoftwareResource
+            [Category] => Array
+                (
+                    [0] => Software
+                )
+
+            [MCType] => SoftwareResource
+        )
+
+    [85] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SoftwareImage/SoftwareImage
+            [ObjectType] => SoftwareImage
+            [Category] => Array
+                (
+                    [0] => Software
+                )
+
+            [MCType] => SoftwareImage
+        )
+
+    [86] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SoftwareStack/SoftwareStack
+            [ObjectType] => SoftwareStack
+            [Category] => Array
+                (
+                    [0] => Software
+                )
+
+            [MCType] => SoftwareStack
+        )
+
+    [87] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SoftwareComponentInstallation/SoftwareComponentInstallation
+            [ObjectType] => SoftwareComponentInstallation
+            [Category] => Array
+                (
+                    [0] => Software
+                )
+
+            [MCType] => SoftwareComponentInstallation
+        )
+
+    [88] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SoftwareFeatureInstallation/SoftwareFeatureInstallation
+            [ObjectType] => SoftwareFeatureInstallation
+            [Category] => Array
+                (
+                    [0] => Software
+                )
+
+            [MCType] => SoftwareFeatureInstallation
+        )
+
+    [89] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SoftwareInstallation/SoftwareInstallation
+            [ObjectType] => SoftwareInstallation
+            [Category] => Array
+                (
+                    [0] => Software
+                )
+
+            [MCType] => SoftwareInstallation
+        )
+
+    [90] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SoftwareInstance/SoftwareInstance
+            [ObjectType] => SoftwareInstance
+            [Category] => Array
+                (
+                    [0] => Software
+                )
+
+            [MCType] => SoftwareInstance
+        )
+
+    [91] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/TemporaryFixInstallation/TemporaryFixInstallation
+            [ObjectType] => TemporaryFixInstallation
+            [Category] => Array
+                (
+                    [0] => Software
+                )
+
+            [MCType] => TemporaryFixInstallation
+        )
+
+    [92] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/TemporaryFixGroupInstallation/TemporaryFixGroupInstallation
+            [ObjectType] => TemporaryFixGroupInstallation
+            [Category] => Array
+                (
+                    [0] => Software
+                )
+
+            [MCType] => TemporaryFixGroupInstallation
+        )
+
+    [93] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/ImageContainer/ImageContainer
+            [ObjectType] => ImageContainer
+            [Category] => Array
+                (
+                    [0] => Software
+                )
+
+            [MCType] => ImageContainer
+        )
+
+    [94] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/ImageRepository/ImageRepository
+            [ObjectType] => ImageRepository
+            [Category] => Array
+                (
+                    [0] => Software
+                )
+
+            [MCType] => ImageRepository
+        )
+
+    [95] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SoftwareMetaDataContent/SoftwareMetaDataContent
+            [ObjectType] => SoftwareMetaDataContent
+            [Category] => Array
+                (
+                    [0] => Software
+                )
+
+            [MCType] => SoftwareMetaDataContent
+        )
+
+    [96] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/CompletionAction/CompletionAction
+            [ObjectType] => CompletionAction
+            [Category] => Array
+                (
+                    [0] => Software
+                )
+
+            [MCType] => CompletionAction
+        )
+
+    [97] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/PhysicalComponent/PhysicalComponent
+            [ObjectType] => PhysicalComponent
+            [Category] => Array
+                (
+                    [0] => Physical
+                )
+
+            [MCType] => PhysicalComponent
+        )
+
+    [98] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/PhysicalConnector/PhysicalConnector
+            [ObjectType] => PhysicalConnector
+            [Category] => Array
+                (
+                    [0] => Physical
+                )
+
+            [MCType] => PhysicalConnector
+        )
+
+    [99] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/PhysicalPackage/PhysicalPackage
+            [ObjectType] => PhysicalPackage
+            [Category] => Array
+                (
+                    [0] => Physical
+                )
+
+            [MCType] => PhysicalPackage
+        )
+
+    [100] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/PhysicalLink/PhysicalLink
+            [ObjectType] => PhysicalLink
+            [Category] => Array
+                (
+                    [0] => Physical
+                )
+
+            [MCType] => PhysicalLink
+        )
+
+    [101] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Chip/Chip
+            [ObjectType] => Chip
+            [Category] => Array
+                (
+                    [0] => Physical
+                )
+
+            [MCType] => Chip
+        )
+
+    [102] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/PhysicalMedia/PhysicalMedia
+            [ObjectType] => PhysicalMedia
+            [Category] => Array
+                (
+                    [0] => Physical
+                )
+
+            [MCType] => PhysicalMedia
+        )
+
+    [103] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/PhysicalPort/PhysicalPort
+            [ObjectType] => PhysicalPort
+            [Category] => Array
+                (
+                    [0] => Physical
+                )
+
+            [MCType] => PhysicalPort
+        )
+
+    [104] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Slot/Slot
+            [ObjectType] => Slot
+            [Category] => Array
+                (
+                    [0] => Physical
+                )
+
+            [MCType] => Slot
+        )
+
+    [105] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Card/Card
+            [ObjectType] => Card
+            [Category] => Array
+                (
+                    [0] => Physical
+                )
+
+            [MCType] => Card
+        )
+
+    [106] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/FRU/FRU
+            [ObjectType] => FRU
+            [Category] => Array
+                (
+                    [0] => Physical
+                )
+
+            [MCType] => FRU
+        )
+
+    [107] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/PhysicalFrame/PhysicalFrame
+            [ObjectType] => PhysicalFrame
+            [Category] => Array
+                (
+                    [0] => Physical
+                )
+
+            [MCType] => PhysicalFrame
+        )
+
+    [108] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Chassis/Chassis
+            [ObjectType] => Chassis
+            [Category] => Array
+                (
+                    [0] => Physical
+                )
+
+            [MCType] => Chassis
+        )
+
+    [109] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Rack/Rack
+            [ObjectType] => Rack
+            [Category] => Array
+                (
+                    [0] => Physical
+                )
+
+            [MCType] => Rack
+        )
+
+    [110] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/PhysicalMemory/PhysicalMemory
+            [ObjectType] => PhysicalMemory
+            [Category] => Array
+                (
+                    [0] => Physical
+                )
+
+            [MCType] => PhysicalMemory
+        )
+
+    [111] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/LogicalDevice/LogicalDevice
+            [ObjectType] => LogicalDevice
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => LogicalDevice
+        )
+
+    [112] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Battery/Battery
+            [ObjectType] => Battery
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => Battery
+        )
+
+    [113] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Controller/Controller
+            [ObjectType] => Controller
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => Controller
+        )
+
+    [114] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/CoolingDevice/CoolingDevice
+            [ObjectType] => CoolingDevice
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => CoolingDevice
+        )
+
+    [115] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Fan/Fan
+            [ObjectType] => Fan
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => Fan
+        )
+
+    [116] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/LogicalModule/LogicalModule
+            [ObjectType] => LogicalModule
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => LogicalModule
+        )
+
+    [117] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/LogicalPort/LogicalPort
+            [ObjectType] => LogicalPort
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => LogicalPort
+        )
+
+    [118] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/MediaAccessDevice/MediaAccessDevice
+            [ObjectType] => MediaAccessDevice
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => MediaAccessDevice
+        )
+
+    [119] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/PowerSource/PowerSource
+            [ObjectType] => PowerSource
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => PowerSource
+        )
+
+    [120] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Printer/Printer
+            [ObjectType] => Printer
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => Printer
+        )
+
+    [121] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Processor/Processor
+            [ObjectType] => Processor
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => Processor
+        )
+
+    [122] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Sensor/Sensor
+            [ObjectType] => Sensor
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => Sensor
+        )
+
+    [123] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/StorageExtent/StorageExtent
+            [ObjectType] => StorageExtent
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => StorageExtent
+        )
+
+    [124] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/UserDevice/UserDevice
+            [ObjectType] => UserDevice
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => UserDevice
+        )
+
+    [125] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/VideoHead/VideoHead
+            [ObjectType] => VideoHead
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => VideoHead
+        )
+
+    [126] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/DisplayController/DisplayController
+            [ObjectType] => DisplayController
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => DisplayController
+        )
+
+    [127] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/IDEController/IDEController
+            [ObjectType] => IDEController
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => IDEController
+        )
+
+    [128] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/ParallelController/ParallelController
+            [ObjectType] => ParallelController
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => ParallelController
+        )
+
+    [129] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/PCIController/PCIController
+            [ObjectType] => PCIController
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => PCIController
+        )
+
+    [130] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/PCIBridge/PCIBridge
+            [ObjectType] => PCIBridge
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => PCIBridge
+        )
+
+    [131] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/PCIDevice/PCIDevice
+            [ObjectType] => PCIDevice
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => PCIDevice
+        )
+
+    [132] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/PortController/PortController
+            [ObjectType] => PortController
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => PortController
+        )
+
+    [133] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SerialController/SerialController
+            [ObjectType] => SerialController
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => SerialController
+        )
+
+    [134] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SSAController/SSAController
+            [ObjectType] => SSAController
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => SSAController
+        )
+
+    [135] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/USBController/USBController
+            [ObjectType] => USBController
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => USBController
+        )
+
+    [136] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/ATAPort/ATAPort
+            [ObjectType] => ATAPort
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => ATAPort
+        )
+
+    [137] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/NetworkPort/NetworkPort
+            [ObjectType] => NetworkPort
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => NetworkPort
+        )
+
+    [138] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SPIPort/SPIPort
+            [ObjectType] => SPIPort
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => SPIPort
+        )
+
+    [139] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/USBPort/USBPort
+            [ObjectType] => USBPort
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => USBPort
+        )
+
+    [140] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/EthernetPort/EthernetPort
+            [ObjectType] => EthernetPort
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => EthernetPort
+        )
+
+    [141] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/FCPort/FCPort
+            [ObjectType] => FCPort
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => FCPort
+        )
+
+    [142] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/IBPort/IBPort
+            [ObjectType] => IBPort
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => IBPort
+        )
+
+    [143] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/MyrinetPort/MyrinetPort
+            [ObjectType] => MyrinetPort
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => MyrinetPort
+        )
+
+    [144] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SASPort/SASPort
+            [ObjectType] => SASPort
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => SASPort
+        )
+
+    [145] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/TokenRingPort/TokenRingPort
+            [ObjectType] => TokenRingPort
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => TokenRingPort
+        )
+
+    [146] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/WirelessPort/WirelessPort
+            [ObjectType] => WirelessPort
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => WirelessPort
+        )
+
+    [147] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/DiskDrive/DiskDrive
+            [ObjectType] => DiskDrive
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => DiskDrive
+        )
+
+    [148] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/DisketteDrive/DisketteDrive
+            [ObjectType] => DisketteDrive
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => DisketteDrive
+        )
+
+    [149] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/OpticalDrive/OpticalDrive
+            [ObjectType] => OpticalDrive
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => OpticalDrive
+        )
+
+    [150] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/TapeDrive/TapeDrive
+            [ObjectType] => TapeDrive
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => TapeDrive
+        )
+
+    [151] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/PowerOutlet/PowerOutlet
+            [ObjectType] => PowerOutlet
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => PowerOutlet
+        )
+
+    [152] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/PowerSupply/PowerSupply
+            [ObjectType] => PowerSupply
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => PowerSupply
+        )
+
+    [153] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/NumericSensor/NumericSensor
+            [ObjectType] => NumericSensor
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => NumericSensor
+        )
+
+    [154] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Memory/Memory
+            [ObjectType] => Memory
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => Memory
+        )
+
+    [155] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/CacheMemory/CacheMemory
+            [ObjectType] => CacheMemory
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => CacheMemory
+        )
+
+    [156] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/DiskPartition/DiskPartition
+            [ObjectType] => DiskPartition
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => DiskPartition
+        )
+
+    [157] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/LogicalVolume/LogicalVolume
+            [ObjectType] => LogicalVolume
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => LogicalVolume
+        )
+
+    [158] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/PhysicalVolume/PhysicalVolume
+            [ObjectType] => PhysicalVolume
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => PhysicalVolume
+        )
+
+    [159] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/StorageVolume/StorageVolume
+            [ObjectType] => StorageVolume
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => StorageVolume
+        )
+
+    [160] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/VolumeContainer/VolumeContainer
+            [ObjectType] => VolumeContainer
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => VolumeContainer
+        )
+
+    [161] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Keyboard/Keyboard
+            [ObjectType] => Keyboard
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => Keyboard
+        )
+
+    [162] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/PointingDevice/PointingDevice
+            [ObjectType] => PointingDevice
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => PointingDevice
+        )
+
+    [163] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/RAIDController/RAIDController
+            [ObjectType] => RAIDController
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => RAIDController
+        )
+
+    [164] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/DiskGroup/DiskGroup
+            [ObjectType] => DiskGroup
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => DiskGroup
+        )
+
+    [165] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/LogicalPortGroup/LogicalPortGroup
+            [ObjectType] => LogicalPortGroup
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => LogicalPortGroup
+        )
+
+    [166] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/PowerOutletGroup/PowerOutletGroup
+            [ObjectType] => PowerOutletGroup
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => PowerOutletGroup
+        )
+
+    [167] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Zone/Zone
+            [ObjectType] => Zone
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => Zone
+        )
+
+    [168] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/ZoneSet/ZoneSet
+            [ObjectType] => ZoneSet
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => ZoneSet
+        )
+
+    [169] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/ZoneMember/ZoneMember
+            [ObjectType] => ZoneMember
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => ZoneMember
+        )
+
+    [170] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Display/Display
+            [ObjectType] => Display
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => Display
+        )
+
+    [171] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/DesktopMonitor/DesktopMonitor
+            [ObjectType] => DesktopMonitor
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => DesktopMonitor
+        )
+
+    [172] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/FlatPanel/FlatPanel
+            [ObjectType] => FlatPanel
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => FlatPanel
+        )
+
+    [173] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/TouchDisplay/TouchDisplay
+            [ObjectType] => TouchDisplay
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => TouchDisplay
+        )
+
+    [174] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/ResourceAllocationSettings/ResourceAllocationSettings
+            [ObjectType] => ResourceAllocationSettings
+            [Category] => Array
+                (
+                    [0] => Virtual
+                )
+
+            [MCType] => ResourceAllocationSettings
+        )
+
+    [175] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/ResourcePool/ResourcePool
+            [ObjectType] => ResourcePool
+            [Category] => Array
+                (
+                    [0] => Virtual
+                )
+
+            [MCType] => ResourcePool
+        )
+
+    [176] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/StoragePolicy/StoragePolicy
+            [ObjectType] => StoragePolicy
+            [Category] => Array
+                (
+                    [0] => Virtual
+                )
+
+            [MCType] => StoragePolicy
+        )
+
+    [177] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/VirtualAppliance/VirtualAppliance
+            [ObjectType] => VirtualAppliance
+            [Category] => Array
+                (
+                    [0] => Virtual
+                )
+
+            [MCType] => VirtualAppliance
+        )
+
+    [178] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/VirtualSystemSettings/VirtualSystemSettings
+            [ObjectType] => VirtualSystemSettings
+            [Category] => Array
+                (
+                    [0] => Virtual
+                )
+
+            [MCType] => VirtualSystemSettings
+        )
+
+    [179] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/StoragePool/StoragePool
+            [ObjectType] => StoragePool
+            [Category] => Array
+                (
+                    [0] => Virtual
+                )
+
+            [MCType] => StoragePool
+        )
+
+    [180] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/SystemContainerSettings/SystemContainerSettings
+            [ObjectType] => SystemContainerSettings
+            [Category] => Array
+                (
+                    [0] => Virtual
+                )
+
+            [MCType] => SystemContainerSettings
+        )
+
+    [181] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/AIXWPARSettings/AIXWPARSettings
+            [ObjectType] => AIXWPARSettings
+            [Category] => Array
+                (
+                    [0] => Virtual
+                )
+
+            [MCType] => AIXWPARSettings
+        )
+
+    [182] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/Group/Group
+            [ObjectType] => Group
+            [Category] => Array
+                (
+                    [0] => ManagementApplication
+                )
+
+            [MCType] => Group
+        )
+
+    [183] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/LogicalNetworkTemplate/LogicalNetworkTemplate
+            [ObjectType] => LogicalNetworkTemplate
+            [Category] => Array
+                (
+                    [0] => ManagementApplication
+                )
+
+            [MCType] => LogicalNetworkTemplate
+        )
+
+    [184] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/StoragePlatform/StoragePlatform
+            [ObjectType] => StoragePlatform
+            [Category] => Array
+                (
+                    [0] => System
+                )
+
+            [MCType] => StoragePlatform
+        )
+
+    [185] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/LAGSettings/LAGSettings
+            [ObjectType] => LAGSettings
+            [Category] => Array
+                (
+                    [0] => Network
+                )
+
+            [MCType] => LAGSettings
+        )
+
+    [186] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/VNICGroup/VNICGroup
+            [ObjectType] => VNICGroup
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => VNICGroup
+        )
+
+    [187] => stdClass Object
+        (
+            [uri] => /ibm/director/rest/resourcedefinitions/DiskConsistencyGroup/DiskConsistencyGroup
+            [ObjectType] => DiskConsistencyGroup
+            [Category] => Array
+                (
+                    [0] => Device
+                )
+
+            [MCType] => DiskConsistencyGroup
+        )
+
+)

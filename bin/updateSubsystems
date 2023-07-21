@@ -1,0 +1,127 @@
+#!/usr/bin/php
+<?php
+/*******************************************************************************
+ *
+ * $Id: updateSubsystems 76979 2013-07-18 19:27:00Z rcallaha $
+ * $Date: 2013-07-18 15:27:00 -0400 (Thu, 18 Jul 2013) $
+ * $Author: rcallaha $
+ * $Revision: 76979 $
+ * $HeadURL: https://svn.ultradns.net/svn/sts_tools/sts-lib/trunk/bin/updateSubsystems $
+ *
+ *******************************************************************************
+ */
+
+include __DIR__ . "/../config/global.php";
+
+use STS\CMDB\CMDBBusinessService;
+use STS\CMDB\CMDBBusinessServiceTable;
+
+use STS\CMDB\CMDBSubsystem;
+use STS\CMDB\CMDBSubsystemTable;
+
+use STS\CMDB\CMDBUserGroupTable;
+use STS\CMDB\CMDBUserTable;
+
+$coreBSExcludes = array(
+    "Microsoft",
+    "Ultra",
+    "Pathfinder",
+    "itRS",
+    "SIP-IX",
+    "Webmetrics",
+    "ENUM",
+    "Mobile Cloud",
+    "MDTV",
+    "Generic PKI/CA",
+    "UltraDNS-Shared Services",
+    "Licensed OMS",
+    "Digger",
+    "Site Protect",
+    "NIS (Unix)",
+    "Text Everywhere",
+    "WMRS",
+    "MediaOps",
+    "OBSTAR",
+    );
+
+try
+{
+
+    function sortBSByName(CMDBBusinessService $a, CMDBBusinessService $b) {
+        return strcmp($a->getName(), $b->getName());
+    }
+
+    function sortSSByName(CMDBSubsystem $a, CMDBSubsystem $b) {
+        return strcmp($a->getName(), $b->getName());
+    }
+
+
+    $bsTable = new CMDBBusinessServiceTable();
+    $subsystemTable = new CMDBSubsystemTable();
+    $userGroupTable = new CMDBUserGroupTable();
+    $userTable = new CMDBUserTable();
+
+	$query = rawurlencode("operational_status=1^nameNOT LIKE" . implode("^nameNOT LIKE", $coreBSExcludes));
+    $services = $bsTable->getByQuery($query);
+
+    usort($services, 'sortBSByName');
+
+    foreach ($services as $service) {
+        print $service->getName() . "\n";
+
+        // get the subsystems
+        $subsystems = $subsystemTable->getByBusinessServiceId($service->getSysId());
+        usort($subsystems, 'sortSSByName');
+
+        foreach ($subsystems as $subsystem) {
+            print "\t" . $subsystem->getName() . "\n";
+        }
+    }
+    exit;
+
+    $subsystemName = 'STS LAMP CertMon';
+    $newGroupName = 'Core Hosting';
+
+    $subsystem = $subsystemTable->getByName($subsystemName);
+    $userGroup = $userGroupTable->getBySysId($subsystem->getSystemsAdminGroupId());
+    $manager = $userTable->getById($subsystem->getSystemsAdminManagerId());
+    print "Subsystem name: " . $subsystem->getName() . "\n";
+    print "Current group name: " . $userGroup->getName() . "\n";
+    print "Current manager: " . $manager->getName() . "\n";
+
+    print "\n";
+
+    $newUserGroup = $userGroupTable->getByName($newGroupName);
+    $newManager = $userTable->getBySysId($newUserGroup->getManagerId());
+    print "New group name: " . $newUserGroup->getName() . "\n";
+    print "New manager: " . $newManager->getName() . "\n";
+
+
+    print "\nUpdating...\n";
+    $subsystem->setSystemsAdminGroupId($newUserGroup->getSysId());
+    $subsystem->setSystemsAdminManagerId($newManager->getSysId());
+    $subsystemTable->update($subsystem);
+
+    print "Verifying...\n";
+    $subsystem = $subsystemTable->getByName($subsystemName);
+    $userGroup = $userGroupTable->getBySysId($subsystem->getSystemsAdminGroupId());
+    $manager = $userTable->getById($subsystem->getSystemsAdminManagerId());
+    print "New group name: " . $userGroup->getName() . "\n";
+    print "New manager: " . $manager->getName() . "\n";
+
+ }
+
+catch(Exception $e)
+{
+	print_r(
+		array(
+			"returnCode" => 1,
+			"errorCode"  => $e->getCode(),
+			"errorText"  => $e->getMessage(),
+			"errorFile"  => $e->getFile(),
+			"errorLine"  => $e->getLine(),
+			"errorStack" => $e->getTraceAsString()
+			)
+		);
+}
+?>

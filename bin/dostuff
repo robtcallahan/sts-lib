@@ -1,0 +1,127 @@
+#!/usr/bin/php
+<?php
+
+// default time zone
+date_default_timezone_set("America/New_York");
+
+// define the include path where all our class files are found
+set_include_path(dirname(__DIR__) . ":/usr/share/pear");
+set_include_path(
+    implode(':',
+            array(
+                __DIR__,
+                __DIR__ . "/../",
+                "/usr/share/php/ZF2/library",
+                "/usr/share/pear"
+            )
+    )
+);
+
+// register our autoloader that replaces '\' with '/' and '_' with ''
+spl_autoload_register(function ($className) {
+    $className = (string)str_replace('\\', DIRECTORY_SEPARATOR, $className);
+    $className = str_replace('_', DIRECTORY_SEPARATOR, $className);
+    require_once($className . ".php");
+});
+
+// Require that all errors detected are thrown
+set_error_handler(
+    create_function(
+        '$errLevel, $errString, $errFile, $errLine',
+        'throw new ErrorException($errString, 0, $errLevel, $errFile, $errLine);'),
+    E_ALL
+);
+
+use STS\CMDB\CMDBServerTable;
+use STS\Util\Obfuscation;
+
+try {
+    $config = array(
+        "servicenow" => array(
+            "site"     => "prod",
+
+            "prod"     => array(
+                "protocol" => "https",
+                "username" => "stsapp",
+                "password" => 'Z;$o(c`#X7)+>ItZ',
+                "server"   => "neustar.service-now.com"
+            ),
+            "prodjson" => array(
+                "protocol" => "https",
+                "username" => "stsapp",
+                "password" => 'Z;$o(c`#X7)+>ItZ',
+                "server"   => "neustar.service-now.com/api/now/table/"
+            ),
+            "test"     => array(
+                "protocol" => "https",
+                "username" => "stsapp",
+                "password" => 'Z;$o(c`#X7)+>ItZ',
+                "server"   => "neustartest.service-now.com"
+            ),
+            "dev"      => array(
+                "protocol" => "https",
+                "username" => "stsapp",
+                "password" => 'Z;$o(c`#X7)+>ItZ',
+                "server"   => "neustardev.service-now.com"
+            ),
+            "int"      => array(
+                "protocol" => "https",
+                "username" => "stsapp",
+                "password" => 'Z;$o(c`#X7)+>ItZ',
+                "server"   => "neustarint.service-now.com"
+            ),
+            "dev2"     => array(
+                "protocol" => "https",
+                "username" => "stsapp",
+                "password" => 'Z;$o(c`#X7)+>ItZ',
+                "server"   => "neustardev2.service-now.com"
+            )
+        )
+    );
+
+    /*
+    $cmdbCiServerTable = new CMDBServerTable($config);
+    $server = $cmdbCiServerTable->getByName("statvprweb01.va.neustar.com");
+    print $server;
+    */
+
+    $snSite = $config['servicenow']['site'];
+    $snConfig = $config['servicenow'][$snSite];
+    $username = $snConfig['username'];
+    $crypt = new Obfuscation();
+    $password = $crypt->decrypt($snConfig['password']);
+    unset($crypt);
+
+    $baseURL = "{$snConfig['protocol']}://{$snConfig['server']}/";
+    $serverQueryUrl = $baseURL . "cmdb_ci_server.do?JSON&displayvalue=all&sysparm_action=getRecords&sysparm_query=nameLIKEstatvprweb01.va.neustar.com";
+
+    print "$serverQueryUrl={$serverQueryUrl}\n";
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $serverQueryUrl);
+    curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+    curl_setopt($ch, CURLOPT_USERPWD, "{$username}:{$password}");
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_USERAGENT, 'Curl Client');
+    curl_setopt($ch, CURLOPT_VERBOSE, false);
+    curl_setopt($ch, CURLOPT_HEADER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept: application/json"));
+
+    $body   = curl_exec($ch);
+    $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    print_r($body);
+
+} catch (Exception $e) {
+    print_r(
+        array(
+            "returnCode" => 1,
+            "errorCode"  => $e->getCode(),
+            "errorText"  => $e->getMessage(),
+            "errorFile"  => $e->getFile(),
+            "errorLine"  => $e->getLine(),
+            "errorStack" => $e->getTraceAsString()
+        )
+    );
+}

@@ -1,0 +1,294 @@
+#!/usr/bin/php
+<?php
+/*******************************************************************************
+ *
+ * $Id: codeTest 76979 2013-07-18 19:27:00Z rcallaha $
+ * $Date: 2013-07-18 15:27:00 -0400 (Thu, 18 Jul 2013) $
+ * $Author: rcallaha $
+ * $Revision: 76979 $
+ * $HeadURL: https://svn.ultradns.net/svn/sts_tools/sts-lib/trunk/bin/codeTest $
+ *
+ *******************************************************************************
+ */
+
+include __DIR__ . "/../config/global.php";
+
+use STS\CMDB\CMDBServerTable;
+
+use STS\CMDB\CMDBSubsystemTable;
+use STS\CMDB\CMDBUserGroupTable;
+use STS\CMDB\CMDBUserTable;
+
+use STS\LDAP\LDAPGroupTable;
+use STS\LDAP\LDAPGroupsTable;
+use STS\LDAP\LDAPStaffTable;
+use STS\LDAP\LDAPSMGroupsTable;
+use STS\LDAP\LDAPSudoersTable;
+
+use STS\CMDB\CMDBDAO;
+
+use STS\Login\UserTable;
+
+try
+{
+    $subsystemTable = new CMDBSubsystemTable();
+    $userGroupTable = new CMDBUserGroupTable();
+    $userTable = new CMDBUserTable();
+
+    $subsystemName = 'STS LAMP CertMon';
+    $newGroupName = 'Core Hosting';
+
+    $subsystem = $subsystemTable->getByName($subsystemName);
+    $userGroup = $userGroupTable->getBySysId($subsystem->getSystemsAdminGroupId());
+    $manager = $userTable->getById($subsystem->getSystemsAdminManagerId());
+    print "Subsystem name: " . $subsystem->getName() . "\n";
+    print "Current group name: " . $userGroup->getName() . "\n";
+    print "Current manager: " . $manager->getName() . "\n";
+
+    print "\n";
+
+    $newUserGroup = $userGroupTable->getByName($newGroupName);
+    $newManager = $userTable->getBySysId($newUserGroup->getManagerId());
+    print "New group name: " . $newUserGroup->getName() . "\n";
+    print "New manager: " . $newManager->getName() . "\n";
+
+
+    print "\nUpdating...\n";
+    $subsystem->setSystemsAdminGroupId($newUserGroup->getSysId());
+    $subsystem->setSystemsAdminManagerId($newManager->getSysId());
+    $subsystemTable->update($subsystem);
+
+    print "Verifying...\n";
+    $subsystem = $subsystemTable->getByName($subsystemName);
+    $userGroup = $userGroupTable->getBySysId($subsystem->getSystemsAdminGroupId());
+    $manager = $userTable->getById($subsystem->getSystemsAdminManagerId());
+    print "New group name: " . $userGroup->getName() . "\n";
+    print "New manager: " . $manager->getName() . "\n";
+
+    /*
+    $serverName = 'stihcprxm24.va.neustar.com';
+
+    $serverTable = new CMDBServerTable();
+    $server = $serverTable->getByName($serverName, false, true);
+    print_r($server);
+    */
+
+    /*
+	#$uid = 'jbowyer';
+
+    $cmdbDAO = new CMDBDAO();
+    try {
+        $ci = $cmdbDAO->getRecords('cmdb_ci_server', "name=stihcprxm24.va.neustar.com");
+    } catch (ErrorException $e) {
+        if ($e->getCode() == CMDBDAO::RETURN_EMPTY) {
+            print "empty return value\n";
+            exit;
+            # do appropriate things here
+        }
+    }
+    print_r($ci);
+    exit;
+    */
+
+    /*
+    print "Checking LDAPSudoers...\n";
+    $sudoersTable = new LDAPSudoersTable();
+    $sudoers = $sudoersTable->searchByCn('cbrown');
+    */
+
+    /*
+	print "Checking StaffTable...\n";
+	$staffTable = new LDAPStaffTable();
+	$staff = $staffTable->searchByUid($uid);
+	print $staff . "\n";
+    */
+
+    /*
+	print "Checking GroupTable...\n";
+	$groupTable = new LDAPGroupTable();
+	$group = $groupTable->searchForMemberUidInGroup('nsusers', 'prees');
+	print $group . "\n";
+    */
+
+    /*
+	print "Checking GroupsTable...\n";
+	$groupsTable = new LDAPGroupsTable();
+	$groups = $groupsTable->searchByUniqueMember('rcallaha');
+	print $groups . "\n";
+    */
+
+	/*
+	$staffTable = new LDAPStaffTable();
+	$staff = $staffTable->searchByUid('rcallaha');
+	print $staff;
+	*/
+
+	/*
+	$cmdb = new STS\CMDB\CMDBDAO();
+	$results = $cmdb->getRecord('cmdb_ci_server', 'nameLIKEstopcdvvt1');
+	*/
+
+	/*
+	$st = new \STS\CMDB\CMDBSubsystemTable();
+	$s = $st->getByName("STS");
+	print $s;
+	*/
+
+	/*
+	$st = new \STS\CMDB\CMDBServerTable();
+	$s = $st->getByNameStartsWith("stlpcprxm1");
+	print $s;
+	*/
+
+
+
+	/*
+	$st = new SysLog()
+	$s = $st->getByNameStartsWith("use952wb8h");
+	print_r($s);
+	/*
+
+	// initialize syslog
+	$appName = "Unknown";
+	if (array_key_exists("appName", $GLOBALS['config'])) {
+		$appName = $GLOBALS['config']->appName;
+	}
+	$sysLog = SysLog::singleton($appName);
+	$sysLog->setLogLevel(INFO);
+	$sysLog->info("Test");
+	*/
+
+	/*
+	$adUt = new \STS\AD\ADUserTable();
+	#$adUser = $adUt->getByUid("rcallaha");
+	$users = $adUt->getByLastName("Callahan");
+	for ($i=0; $i<count($users); $i++)
+	{
+		$u = $users[$i];
+		print $u;
+		print "\n";
+	}
+	*/
+
+	/*
+	$bst = new \STS\CMDB\CMDBBusinessServiceTable();
+	$s = $bst->getByName("BladeRunner");
+	print $s;
+	*/
+
+	/*
+	$ut = new \STS\CMDB\CMDBUserTable();
+	$u = $ut->getByUserName("rcallaha");
+	print $u;
+	*/
+
+	/*
+	$bt = new SIMBladeTable();
+	$b = new SIMBlade();
+	$b->setDeviceName("testBlade");
+	$nb = $bt->create($b);
+	print $b;
+	$bt->delete($nb);
+	*/
+
+	/*
+	$ct = new SIMChassisTable();
+	$c = $ct->getByDeviceName("stnphpbcpr3");
+	print "Chassis = " . $c->getFullDnsName() . "\n";
+
+	$bt = new SIMBladeTable();
+	$b = $bt->getByDeviceName("stnpcprse1");
+	print "Blade = " . $b->getFullDnsName() . "\n";
+	*/
+
+	/*
+	$wt = new SIMBladeWWNTable();
+	$wwns = $wt->getByBladeId($b->getId());
+	for ($i = 0; $i < count($wwns); $i++)
+	{
+		$wwn = $wwns[$i];
+		print "WWN = " . $wwn->getWwn() . "\n";
+	}
+	*/
+
+	/*
+	for ($i=0; $i<count($array); $i++)
+	{
+		$c = $array[$i];
+		print $c->getDeviceName() . "\n";
+	}
+	*/
+
+	/*
+	$user = new User();
+	$user = $user->getByUserName("rcallaha");
+	print $user;
+
+	$login = new Login();
+	$login->record($user->getId());
+	$login = $login->getByUserId($user->getId());
+	print $login;
+
+	$view = new PageView();
+	$view->record($user->getId());
+	*/
+
+	/*
+	$logins = $login->getAll();
+	for ($i=0; $i<count($logins); $i++)
+	{
+		$l = $logins[$i];
+		print $l->getLastName() . "\n";
+	}
+	*/
+
+	/*
+	$syslog = SysLog::singleton("dostuff");
+	$syslog->debug("This is a test debug message");
+
+	$user = new User();
+
+	print "\nChecking for user test\n";
+	$user = $user->getByUserName("test");
+	print $user;
+
+	print "\nDeleting user test\n";
+	$user->delete();
+
+	print "\nChecking for user test\n";
+	$user = $user->getByUserName("test");
+	print $user;
+
+	print "\nCreating user test\n";
+	$user = new User();
+	$user->setUserName("test");
+	$user->setFirstName("New");
+	$user->setLastName("Test");
+	$user = $user->create();
+	print $user;
+	*/
+
+	/*
+	print "\nUpdating user\n";
+	$user->setDateUpdated(date('Y-m-d h:i:s'));
+	$user->setUserUpdated("test");
+	$user->update();
+	print $user;
+	*/
+
+}
+
+catch(Exception $e)
+{
+	print_r(
+		array(
+			"returnCode" => 1,
+			"errorCode"  => $e->getCode(),
+			"errorText"  => $e->getMessage(),
+			"errorFile"  => $e->getFile(),
+			"errorLine"  => $e->getLine(),
+			"errorStack" => $e->getTraceAsString()
+			)
+		);
+}
+?>

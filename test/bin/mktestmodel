@@ -1,0 +1,111 @@
+#!/usr/bin/php
+<?php
+/*******************************************************************************
+ *
+ * $Id: mktestmodel 79018 2013-09-19 00:06:03Z rcallaha $
+ * $Date: 2013-09-18 20:06:03 -0400 (Wed, 18 Sep 2013) $
+ * $Author: rcallaha $
+ * $Revision: 79018 $
+ * $HeadURL: https://svn.ultradns.net/svn/sts_tools/sts-lib/trunk/test/bin/mktestmodel $
+ *
+ *******************************************************************************
+ */
+
+try
+{
+    $opts = getopt('hf:p:');
+    if (!$opts || $opts && array_key_exists('h', $opts)) {
+        print "Usage: mktestmodel [-h] -f class model [-p property_name]\n";
+        print "\n";
+        print "       -h                this help\n";
+        print "       -f model_class    full path to model class\n";
+        print "       -p property_name  the name of the property to use in tests. defaults to 'name'\n";
+        exit;
+    }
+
+    $propertyName = array_key_exists('p', $opts) ? $opts['p'] : 'name';
+    print "Property name = {$propertyName}\n";
+    $modelFile = file_get_contents($opts['f']);
+    $recs = explode("\n", $modelFile);
+
+    $nameSpace = "";
+    $className = "";
+    foreach ($recs as $rec) {
+        #print "{$rec}\n";
+        if (preg_match("/^namespace (.*);/", $rec, $m)) {
+            $nameSpace = $m[1];
+            print "Model class namespace = {$nameSpace}\n";
+        }
+        else if (preg_match("/^class (\w+)/", $rec, $m)) {
+            $className = $m[1];
+            print "Model class name = {$className}\n";
+        }
+    }
+
+    if ($nameSpace == "" || $className == "") {
+        print "Could not parse name space or class name\n";
+        exit;
+    }
+
+    print "Writing model test file...\n";
+    $templateFile = file_get_contents(__DIR__ . "/../data/ModelTestTemplate.php");
+    $recs = explode("\n", $templateFile);
+
+    $outFileName = $className . "Test.php";
+    $fd = fopen($outFileName, "w");
+
+    foreach ($recs as $rec) {
+        if (preg_match("/^class class_name/", $rec, $m)) {
+            $rec = preg_replace("/class_name/", $className . "Test", $rec);
+        }
+        else if (preg_match("/@var object_class/", $rec, $m[1])) {
+            $rec = preg_replace("/@var object_class/", "@var " . $nameSpace . "\\" . $className, $rec);
+        }
+        else if (preg_match("/@var object_table_class/", $rec, $m[1])) {
+            $rec = preg_replace("/@var object_table_class/", "@var " . $nameSpace . "\\" . $className . "Table", $rec);
+        }
+        else if (preg_match("/propToTest = \"name\"/", $rec, $m[1])) {
+            $rec = preg_replace("/name/", $propertyName, $rec);
+        }
+        else if (preg_match("/object = new model/", $rec, $m)) {
+            $rec = preg_replace("/model/", "\\" . $nameSpace . "\\" . $className, $rec);
+        }
+        else if (preg_match("/objectTable = new stub_table/", $rec, $m)) {
+            $rec = preg_replace("/stub_table/", "Stub" . $className . "Table", $rec);
+        }
+        else if (preg_match("/@covers model/", $rec, $m)) {
+            $rec = preg_replace("/model/", "\\" . $nameSpace . "\\" . $className, $rec);
+        }
+        fwrite($fd, $rec . "\n");
+    }
+    fclose($fd);
+
+    print "Writing table stub file...\n";
+    $templateFile = file_get_contents(__DIR__ . "/../data/StubTableTemplate.php");
+    $recs = explode("\n", $templateFile);
+
+    $outFileName = "Stub" . $className . "Table.php";
+    $fd = fopen($outFileName, "w");
+
+    foreach ($recs as $rec) {
+        if ($rec == "class stub_table extends table_model") {
+            $rec = "class Stub" . $className . "Table extends \\" . $nameSpace . "\\" . $className . "Table";
+        }
+        fwrite($fd, $rec . "\n");
+    }
+    fclose($fd);
+}
+catch(Exception $e)
+{
+	print_r(
+		array(
+			"returnCode" => 1,
+			"errorCode"  => $e->getCode(),
+			"errorText"  => $e->getMessage(),
+			"errorFile"  => $e->getFile(),
+			"errorLine"  => $e->getLine(),
+			"errorStack" => $e->getTraceAsString()
+			)
+		);
+}
+?>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 3.3.9.2
+- http://www.phpmyadmin.net
+-
+- Host: localhost
+- Generation Time: Sep 24, 2013 at 11:46 AM
+- Server version: 5.5.9
+- PHP Version: 5.3.6
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="http://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="dbtest" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="user">
+                CREATE TABLE `user` (
+                  `id` int(5) NOT NULL AUTO_INCREMENT,
+                  `firstName` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `lastName` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `userName` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+                  `nickName` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `empId` varchar(16) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `title` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `dept` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `office` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `email` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `officePhone` varchar(16) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `mobilePhone` varchar(16) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `accessCode` int(1) NOT NULL DEFAULT '0',
+                  PRIMARY KEY (`id`),
+                  UNIQUE KEY `username` (`userName`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'dbtest'
+    -->
+    <database name="dbtest">
+        <!-- Table user -->
+        <table name="user">
+            <column name="id">1</column>
+            <column name="firstName">Rob</column>
+            <column name="lastName">Callahan</column>
+            <column name="userName">rcallaha</column>
+            <column name="nickName">NULL</column>
+            <column name="empId">002386</column>
+            <column name="title">Principal Systems Engr</column>
+            <column name="dept">005160 - Strategic Tools &amp; Solut</column>
+            <column name="office">B8 Office/Cube 32</column>
+            <column name="email">Robert.Callahan@neustar.biz</column>
+            <column name="officePhone">(571) 434-5165</column>
+            <column name="mobilePhone">(703) 851-5412</column>
+            <column name="accessCode">3</column>
+        </table>
+        <table name="user">
+            <column name="id">2</column>
+            <column name="firstName">Meg (Geisler)</column>
+            <column name="lastName">Callahan</column>
+            <column name="userName">mgeisler</column>
+            <column name="nickName">NULL</column>
+            <column name="empId">003907</column>
+            <column name="title">Principal Bus Systems Analyst</column>
+            <column name="dept">005165 - Shared Systems Administ</column>
+            <column name="office">Sterling</column>
+            <column name="email">meg.geisler@neustar.biz</column>
+            <column name="officePhone">703)-464-4245</column>
+            <column name="mobilePhone">703-328-2544</column>
+            <column name="accessCode">0</column>
+        </table>
+        <table name="user">
+            <column name="id">3</column>
+            <column name="firstName">Iris</column>
+            <column name="lastName">Culpepper</column>
+            <column name="userName">iculpepp</column>
+            <column name="nickName">NULL</column>
+            <column name="empId">003194</column>
+            <column name="title">Principal Bus Systems Analyst</column>
+            <column name="dept">005235 - SysQ</column>
+            <column name="office">Bldg 10, 2nd Floor, Cube 53</column>
+            <column name="email">Iris.Culpepper@neustar.biz</column>
+            <column name="officePhone">(571) 434-6050</column>
+            <column name="mobilePhone">NULL</column>
+            <column name="accessCode">0</column>
+        </table>
+        <table name="user">
+            <column name="id">4</column>
+            <column name="firstName">James</column>
+            <column name="lastName">Weber</column>
+            <column name="userName">jweber</column>
+            <column name="nickName">NULL</column>
+            <column name="empId">002746</column>
+            <column name="title">Dir Data Centers</column>
+            <column name="dept">005117 - Operations Mgmt</column>
+            <column name="office">B8 Office/Cube 76</column>
+            <column name="email">James.Weber@neustar.biz</column>
+            <column name="officePhone">571-434-5917</column>
+            <column name="mobilePhone">571-334-0587</column>
+            <column name="accessCode">0</column>
+        </table>
+        <table name="user">
+            <column name="id">5</column>
+            <column name="firstName">Melinda</column>
+            <column name="lastName">Miller</column>
+            <column name="userName">mmiller</column>
+            <column name="nickName">NULL</column>
+            <column name="empId">003171</column>
+            <column name="title">Fraud Mgmt Svcs Dir</column>
+            <column name="dept">005106 - Data Center Facility Op</column>
+            <column name="office">NULL</column>
+            <column name="email">Melinda.Miller@neustar.biz</column>
+            <column name="officePhone">(303) 802-1383</column>
+            <column name="mobilePhone">NULL</column>
+            <column name="accessCode">0</column>
+        </table>
+        <table name="user">
+            <column name="id">6</column>
+            <column name="firstName">David</column>
+            <column name="lastName">Bennett</column>
+            <column name="userName">dbennett</column>
+            <column name="nickName">NULL</column>
+            <column name="empId">002453</column>
+            <column name="title">Sr Data Center Techn</column>
+            <column name="dept">005106 - Data Center Facility Op</column>
+            <column name="office">B8 Office/Cube 106</column>
+            <column name="email">David.Bennett@neustar.biz</column>
+            <column name="officePhone">(571) 434-3513</column>
+            <column name="mobilePhone">571-221-8521</column>
+            <column name="accessCode">0</column>
+        </table>
+        <table name="user">
+            <column name="id">11</column>
+            <column name="firstName">Steve</column>
+            <column name="lastName">Clark</column>
+            <column name="userName">sclark</column>
+            <column name="nickName">NULL</column>
+            <column name="empId">000968</column>
+            <column name="title">Staff Sys Admin</column>
+            <column name="dept">005165 - Shared Systems Administ</column>
+            <column name="office">B8 Office/Cube 13</column>
+            <column name="email">Steve.Clark@neustar.biz</column>
+            <column name="officePhone">(571) 434-5646</column>
+            <column name="mobilePhone">3042791289</column>
+            <column name="accessCode">0</column>
+        </table>
+        <table name="user">
+            <column name="id">12</column>
+            <column name="firstName">Angelica</column>
+            <column name="lastName">Brown</column>
+            <column name="userName">abrown</column>
+            <column name="nickName">NULL</column>
+            <column name="empId">SPP0000899</column>
+            <column name="title">Contractor - Data Storage Scienc</column>
+            <column name="dept">NULL</column>
+            <column name="office">NULL</column>
+            <column name="email">Angelica.Brown@neustar.biz</column>
+            <column name="officePhone">703-547-6023</column>
+            <column name="mobilePhone">703-309-9073</column>
+            <column name="accessCode">0</column>
+        </table>
+        <table name="user">
+            <column name="id">13</column>
+            <column name="firstName">Allyson</column>
+            <column name="lastName">Raines</column>
+            <column name="userName">s_araine</column>
+            <column name="nickName">NULL</column>
+            <column name="empId">NULL</column>
+            <column name="title">Contractor</column>
+            <column name="dept">NULL</column>
+            <column name="office">NULL</column>
+            <column name="email">Allyson.Raines@neustar.biz</column>
+            <column name="officePhone">571-434-6816</column>
+            <column name="mobilePhone">NULL</column>
+            <column name="accessCode">0</column>
+        </table>
+    </database>
+</pma_xml_export>

@@ -1,0 +1,3043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                    <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/STS.html">\STS</a></li>
+                                                    </ul>
+                    </li>
+                    <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                    <i class="icon-list-alt"></i>&#160;Errors
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                    <i class="icon-list-alt"></i>&#160;Markers
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-881436875"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-881436875" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-924625363"></a>
+                                <a href="../namespaces/STS.html" style="margin-left: 30px; padding-left: 0">STS</a>
+            </div>
+            <div id="namespace-924625363" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-219282119"></a>
+                                <a href="../namespaces/STS.AD.html" style="margin-left: 30px; padding-left: 0">AD</a>
+            </div>
+            <div id="namespace-219282119" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/STS.AD.ADDAO.html">ADDAO</a></li>
+                                                    <li class="class"><a href="../classes/STS.AD.ADUser.html">ADUser</a></li>
+                                                    <li class="class"><a href="../classes/STS.AD.ADUserTable.html">ADUserTable</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1590311823"></a>
+                                <a href="../namespaces/STS.CMDB.html" style="margin-left: 30px; padding-left: 0">CMDB</a>
+            </div>
+            <div id="namespace-1590311823" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBBusinessService.html">CMDBBusinessService</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBBusinessServiceTable.html">CMDBBusinessServiceTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBChangeRequest.html">CMDBChangeRequest</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBChangeRequestTable.html">CMDBChangeRequestTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBCI.html">CMDBCI</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBCITable.html">CMDBCITable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBDAO.html">CMDBDAO</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBGroup.html">CMDBGroup</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBGroupTable.html">CMDBGroupTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBItemOptionNew.html">CMDBItemOptionNew</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBItemOptionNewTable.html">CMDBItemOptionNewTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBList.html">CMDBList</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBListTable.html">CMDBListTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBLocation.html">CMDBLocation</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBLocationTable.html">CMDBLocationTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBManufacturer.html">CMDBManufacturer</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBManufacturerTable.html">CMDBManufacturerTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBNetworkAdapter.html">CMDBNetworkAdapter</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBNetworkAdapterTable.html">CMDBNetworkAdapterTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBNetworkDevice.html">CMDBNetworkDevice</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBNetworkDeviceTable.html">CMDBNetworkDeviceTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBRack.html">CMDBRack</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBRackTable.html">CMDBRackTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBRelatedImpactedService.html">CMDBRelatedImpactedService</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBRelatedImpactedServiceTable.html">CMDBRelatedImpactedServiceTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBRelationship.html">CMDBRelationship</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBRelationshipTable.html">CMDBRelationshipTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBRelationshipType.html">CMDBRelationshipType</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBRelationshipTypeTable.html">CMDBRelationshipTypeTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBRequest.html">CMDBRequest</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBRequestItem.html">CMDBRequestItem</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBRequestItemTable.html">CMDBRequestItemTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBRequestTable.html">CMDBRequestTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBSANSwitch.html">CMDBSANSwitch</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBSANSwitchTable.html">CMDBSANSwitchTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBScItemOption.html">CMDBScItemOption</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBScItemOptionMtom.html">CMDBScItemOptionMtom</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBScItemOptionMtomTable.html">CMDBScItemOptionMtomTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBScItemOptionTable.html">CMDBScItemOptionTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBServer.html">CMDBServer</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBServerTable.html">CMDBServerTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBStorageDevice.html">CMDBStorageDevice</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBStorageDeviceTable.html">CMDBStorageDeviceTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBSubsystem.html">CMDBSubsystem</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBSubsystemTable.html">CMDBSubsystemTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBSyncUpdate.html">CMDBSyncUpdate</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBSyncUpdateTable.html">CMDBSyncUpdateTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBSysJournalFieldList.html">CMDBSysJournalFieldList</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBSysJournalFieldListTable.html">CMDBSysJournalFieldListTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBSysReport.html">CMDBSysReport</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBSysReportTable.html">CMDBSysReportTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBTask.html">CMDBTask</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBTaskCI.html">CMDBTaskCI</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBTaskCITable.html">CMDBTaskCITable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBTaskList.html">CMDBTaskList</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBTaskListTable.html">CMDBTaskListTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBTaskTable.html">CMDBTaskTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBUser.html">CMDBUser</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBUserGroup.html">CMDBUserGroup</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBUserGroupTable.html">CMDBUserGroupTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.CMDB.CMDBUserTable.html">CMDBUserTable</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-208515825"></a>
+                                <a href="../namespaces/STS.DB.html" style="margin-left: 30px; padding-left: 0">DB</a>
+            </div>
+            <div id="namespace-208515825" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/STS.DB.DB.html">DB</a></li>
+                                                                                                    <li class="class"><a href="../classes/STS.DB.DBDAO.html">DBDAO</a></li>
+                                                    <li class="class"><a href="../classes/STS.DB.DBTable.html">DBTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.DB.MySqlDB.html">MySqlDB</a></li>
+                                                    <li class="class"><a href="../classes/STS.DB.OracleDB.html">OracleDB</a></li>
+                                                    <li class="class"><a href="../classes/STS.DB.PostgresDB.html">PostgresDB</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-571776799"></a>
+                                <a href="../namespaces/STS.HPSIM.html" style="margin-left: 30px; padding-left: 0">HPSIM</a>
+            </div>
+            <div id="namespace-571776799" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIM.html">HPSIM</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMBlade.html">HPSIMBlade</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMBladeException.html">HPSIMBladeException</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMBladeExceptionTable.html">HPSIMBladeExceptionTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMBladeReservation.html">HPSIMBladeReservation</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMBladeReservationTable.html">HPSIMBladeReservationTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMBladeTable.html">HPSIMBladeTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMBladeWWN.html">HPSIMBladeWWN</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMBladeWWNTable.html">HPSIMBladeWWNTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMChassis.html">HPSIMChassis</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMChassisTable.html">HPSIMChassisTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMChassisWWN.html">HPSIMChassisWWN</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMChassisWWNTable.html">HPSIMChassisWWNTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMDAO.html">HPSIMDAO</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMExceptionType.html">HPSIMExceptionType</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMExceptionTypeTable.html">HPSIMExceptionTypeTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMMgmtProcessor.html">HPSIMMgmtProcessor</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMMgmtProcessorException.html">HPSIMMgmtProcessorException</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMMgmtProcessorExceptionTable.html">HPSIMMgmtProcessorExceptionTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMMgmtProcessorTable.html">HPSIMMgmtProcessorTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMSwitch.html">HPSIMSwitch</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMSwitchTable.html">HPSIMSwitchTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMVLAN.html">HPSIMVLAN</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMVLANTable.html">HPSIMVLANTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMVM.html">HPSIMVM</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMVMException.html">HPSIMVMException</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMVMExceptionTable.html">HPSIMVMExceptionTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.HPSIM.HPSIMVMTable.html">HPSIMVMTable</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1014694159"></a>
+                                <a href="../namespaces/STS.LDAP.html" style="margin-left: 30px; padding-left: 0">LDAP</a>
+            </div>
+            <div id="namespace-1014694159" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/STS.LDAP.LDAPDAO.html">LDAPDAO</a></li>
+                                                    <li class="class"><a href="../classes/STS.LDAP.LDAPGroup.html">LDAPGroup</a></li>
+                                                    <li class="class"><a href="../classes/STS.LDAP.LDAPGroups.html">LDAPGroups</a></li>
+                                                    <li class="class"><a href="../classes/STS.LDAP.LDAPGroupsTable.html">LDAPGroupsTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.LDAP.LDAPGroupTable.html">LDAPGroupTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.LDAP.LDAPNetgroup.html">LDAPNetgroup</a></li>
+                                                    <li class="class"><a href="../classes/STS.LDAP.LDAPNetgroupTable.html">LDAPNetgroupTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.LDAP.LDAPSMGroups.html">LDAPSMGroups</a></li>
+                                                    <li class="class"><a href="../classes/STS.LDAP.LDAPSMGroupsTable.html">LDAPSMGroupsTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.LDAP.LDAPStaff.html">LDAPStaff</a></li>
+                                                    <li class="class"><a href="../classes/STS.LDAP.LDAPStaffTable.html">LDAPStaffTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.LDAP.LDAPSudoers.html">LDAPSudoers</a></li>
+                                                    <li class="class"><a href="../classes/STS.LDAP.LDAPSudoersTable.html">LDAPSudoersTable</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1908668184"></a>
+                                <a href="../namespaces/STS.Login.html" style="margin-left: 30px; padding-left: 0">Login</a>
+            </div>
+            <div id="namespace-1908668184" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/STS.Login.Login.html">Login</a></li>
+                                                    <li class="class"><a href="../classes/STS.Login.LoginTable.html">LoginTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.Login.PageView.html">PageView</a></li>
+                                                    <li class="class"><a href="../classes/STS.Login.PageViewTable.html">PageViewTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.Login.User.html">User</a></li>
+                                                    <li class="class"><a href="../classes/STS.Login.UserTable.html">UserTable</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-251886733"></a>
+                                <a href="../namespaces/STS.OpsCenter.html" style="margin-left: 30px; padding-left: 0">OpsCenter</a>
+            </div>
+            <div id="namespace-251886733" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/STS.OpsCenter.Client.html">Client</a></li>
+                                                    <li class="class"><a href="../classes/STS.OpsCenter.OpsCenter.html">OpsCenter</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2122115976"></a>
+                                <a href="../namespaces/STS.SANScreen.html" style="margin-left: 30px; padding-left: 0">SANScreen</a>
+            </div>
+            <div id="namespace-2122115976" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/STS.SANScreen.SANScreen.html">SANScreen</a></li>
+                                                    <li class="class"><a href="../classes/STS.SANScreen.SANScreenArray.html">SANScreenArray</a></li>
+                                                    <li class="class"><a href="../classes/STS.SANScreen.SANScreenArrayTable.html">SANScreenArrayTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.SANScreen.SANScreenGeneric.html">SANScreenGeneric</a></li>
+                                                    <li class="class"><a href="../classes/STS.SANScreen.SANScreenGenericTable.html">SANScreenGenericTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.SANScreen.SANScreenHost.html">SANScreenHost</a></li>
+                                                    <li class="class"><a href="../classes/STS.SANScreen.SANScreenHostTable.html">SANScreenHostTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.SANScreen.SANScreenPath.html">SANScreenPath</a></li>
+                                                    <li class="class"><a href="../classes/STS.SANScreen.SANScreenPathTable.html">SANScreenPathTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.SANScreen.SANScreenPort.html">SANScreenPort</a></li>
+                                                    <li class="class"><a href="../classes/STS.SANScreen.SANScreenPortTable.html">SANScreenPortTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.SANScreen.SANScreenSnapshot.html">SANScreenSnapshot</a></li>
+                                                    <li class="class"><a href="../classes/STS.SANScreen.SANScreenSnapshotList.html">SANScreenSnapshotList</a></li>
+                                                    <li class="class"><a href="../classes/STS.SANScreen.SANScreenSnapshotListTable.html">SANScreenSnapshotListTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.SANScreen.SANScreenSnapshotTable.html">SANScreenSnapshotTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.SANScreen.SANScreenSwitch.html">SANScreenSwitch</a></li>
+                                                    <li class="class"><a href="../classes/STS.SANScreen.SANScreenSwitchTable.html">SANScreenSwitchTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.SANScreen.SANScreenVm.html">SANScreenVm</a></li>
+                                                    <li class="class"><a href="../classes/STS.SANScreen.SANScreenVmTable.html">SANScreenVmTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.SANScreen.SANScreenVolume.html">SANScreenVolume</a></li>
+                                                    <li class="class"><a href="../classes/STS.SANScreen.SANScreenVolumeTable.html">SANScreenVolumeTable</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1293568750"></a>
+                                <a href="../namespaces/STS.SystemsDirector.html" style="margin-left: 30px; padding-left: 0">SystemsDirector</a>
+            </div>
+            <div id="namespace-1293568750" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/STS.SystemsDirector.SysDirPhysical.html">SysDirPhysical</a></li>
+                                                    <li class="class"><a href="../classes/STS.SystemsDirector.SysDirPhysicalTable.html">SysDirPhysicalTable</a></li>
+                                                    <li class="class"><a href="../classes/STS.SystemsDirector.SysDirServer.html">SysDirServer</a></li>
+                                                    <li class="class"><a href="../classes/STS.SystemsDirector.SysDirVirtual.html">SysDirVirtual</a></li>
+                                                    <li class="class"><a href="../classes/STS.SystemsDirector.SysDirVirtualTable.html">SysDirVirtualTable</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1662479906"></a>
+                                <a href="../namespaces/STS.Util.html" style="margin-left: 30px; padding-left: 0">Util</a>
+            </div>
+            <div id="namespace-1662479906" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/STS.Util.ConfigBridge.html">ConfigBridge</a></li>
+                                                    <li class="class"><a href="../classes/STS.Util.Curl.html">Curl</a></li>
+                                                    <li class="class"><a href="../classes/STS.Util.DistSwitchLookup.html">DistSwitchLookup</a></li>
+                                                    <li class="class"><a href="../classes/STS.Util.HTTPParameters.html">HTTPParameters</a></li>
+                                                    <li class="class"><a href="../classes/STS.Util.NeuConfig.html">NeuConfig</a></li>
+                                                    <li class="class"><a href="../classes/STS.Util.NeuMetric.html">NeuMetric</a></li>
+                                                    <li class="class"><a href="../classes/STS.Util.Obfuscation.html">Obfuscation</a></li>
+                                                    <li class="class"><a href="../classes/STS.Util.SSH2.html">SSH2</a></li>
+                                                    <li class="class"><a href="../classes/STS.Util.SwatLog.html">SwatLog</a></li>
+                                                    <li class="class"><a href="../classes/STS.Util.SysLog.html">SysLog</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/STS.NeuObject.html">NeuObject</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CMDBRelatedImpactedServiceTest.html">CMDBRelatedImpactedServiceTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBSyncUpdateTest.html">CMDBSyncUpdateTest</a></li>
+                                                    <li class="class"><a href="../classes/class_name.html">class_name</a></li>
+                                                    <li class="class"><a href="../classes/stub_table.html">stub_table</a></li>
+                                                    <li class="class"><a href="../classes/NeuConfigTest.html">NeuConfigTest</a></li>
+                                                    <li class="class"><a href="../classes/NeuMetricTest.html">NeuMetricTest</a></li>
+                                                    <li class="class"><a href="../classes/ServiceNowTest.html">ServiceNowTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBBusinessServiceTest.html">CMDBBusinessServiceTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBChangeRequestTest.html">CMDBChangeRequestTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBCITest.html">CMDBCITest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBDAOTest.html">CMDBDAOTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBGroupTest.html">CMDBGroupTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBItemOptionNewTest.html">CMDBItemOptionNewTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBListTest.html">CMDBListTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBLocationTest.html">CMDBLocationTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBManufacturerTest.html">CMDBManufacturerTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBNetworkAdapterTest.html">CMDBNetworkAdapterTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBNetworkDeviceTest.html">CMDBNetworkDeviceTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBRackTest.html">CMDBRackTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBRelatedImpactedServiceTest.html">CMDBRelatedImpactedServiceTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBRelationshipTest.html">CMDBRelationshipTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBRelationshipTypeTest.html">CMDBRelationshipTypeTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBRequestItemTest.html">CMDBRequestItemTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBRequestTest.html">CMDBRequestTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBSANSwitchTest.html">CMDBSANSwitchTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBScItemOptionMtomTest.html">CMDBScItemOptionMtomTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBScItemOptionTest.html">CMDBScItemOptionTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBServerTableTest.html">CMDBServerTableTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBServerTest.html">CMDBServerTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBStorageDeviceTest.html">CMDBStorageDeviceTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBSubsystemTableTest.html">CMDBSubsystemTableTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBSubsystemTest.html">CMDBSubsystemTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBSyncUpdateTest.html">CMDBSyncUpdateTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBSysJournalFieldListTest.html">CMDBSysJournalFieldListTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBSysReportTest.html">CMDBSysReportTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBTaskCITest.html">CMDBTaskCITest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBTaskListTest.html">CMDBTaskListTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBTaskTest.html">CMDBTaskTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBUserGroupTest.html">CMDBUserGroupTest</a></li>
+                                                    <li class="class"><a href="../classes/CMDBUserTest.html">CMDBUserTest</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBBusinessServiceTable.html">StubCMDBBusinessServiceTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBChangeRequestTable.html">StubCMDBChangeRequestTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBCITable.html">StubCMDBCITable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBDAO.html">StubCMDBDAO</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBGroupTable.html">StubCMDBGroupTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBItemOptionNewTable.html">StubCMDBItemOptionNewTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBListTable.html">StubCMDBListTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBLocationTable.html">StubCMDBLocationTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBManufacturerTable.html">StubCMDBManufacturerTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBNetworkAdapterTable.html">StubCMDBNetworkAdapterTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBNetworkDeviceTable.html">StubCMDBNetworkDeviceTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBRackTable.html">StubCMDBRackTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBRelatedImpactedServiceTable.html">StubCMDBRelatedImpactedServiceTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBRelationshipTable.html">StubCMDBRelationshipTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBRelationshipTypeTable.html">StubCMDBRelationshipTypeTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBRequestItemTable.html">StubCMDBRequestItemTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBRequestTable.html">StubCMDBRequestTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBSANSwitchTable.html">StubCMDBSANSwitchTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBScItemOptionMtomTable.html">StubCMDBScItemOptionMtomTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBScItemOptionTable.html">StubCMDBScItemOptionTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBServerTable.html">StubCMDBServerTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBStorageDeviceTable.html">StubCMDBStorageDeviceTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBSubsystemTable.html">StubCMDBSubsystemTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBSyncUpdateTable.html">StubCMDBSyncUpdateTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBSysJournalFieldListTable.html">StubCMDBSysJournalFieldListTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBSysReportTable.html">StubCMDBSysReportTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBTaskCITable.html">StubCMDBTaskCITable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBTaskListTable.html">StubCMDBTaskListTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBTaskTable.html">StubCMDBTaskTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBUserGroupTable.html">StubCMDBUserGroupTable</a></li>
+                                                    <li class="class"><a href="../classes/StubCMDBUserTable.html">StubCMDBUserTable</a></li>
+                                                    <li class="class"><a href="../classes/CurlTest.html">CurlTest</a></li>
+                                                    <li class="class"><a href="../classes/ObfuscationTest.html">ObfuscationTest</a></li>
+                                                    <li class="class"><a href="../classes/StubCurl.html">StubCurl</a></li>
+                                                    <li class="class"><a href="../classes/StubSysLog.html">StubSysLog</a></li>
+                                                    <li class="class"><a href="../classes/SysLogTest.html">SysLogTest</a></li>
+                                                    <li class="class"><a href="../classes/SwatLogTest.html">SwatLogTest</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/STS.AD.html">\STS\AD</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\STS\AD</small>ADUser</h1>
+                    <p><em></em></p>
+                    
+
+
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/STS.AD.ADUser.html#method___toString" class="">__toString()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_toObject" class="">toObject()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_get" class="">get()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_set" class="">set()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_setCity" class="">setCity()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_getCity" class="">getCity()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_setCn" class="">setCn()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_getCn" class="">getCn()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_setCompany" class="">setCompany()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_getCompany" class="">getCompany()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_setCountry" class="">setCountry()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_getCountry" class="">getCountry()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_setDept" class="">setDept()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_getDept" class="">getDept()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_setDescr" class="">setDescr()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_getDescr" class="">getDescr()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_setDisplayName" class="">setDisplayName()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_getDisplayName" class="">getDisplayName()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_setDn" class="">setDn()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_getDn" class="">getDn()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_setEmail" class="">setEmail()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_getEmail" class="">getEmail()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_setEmpId" class="">setEmpId()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_getEmpId" class="">getEmpId()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_setFirstName" class="">setFirstName()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_getFirstName" class="">getFirstName()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_setHomePhone" class="">setHomePhone()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_getHomePhone" class="">getHomePhone()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_setLastName" class="">setLastName()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_getLastName" class="">getLastName()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_setManagedObjects" class="">setManagedObjects()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_getManagedObjects" class="">getManagedObjects()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_setManagerDN" class="">setManagerDN()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_getManagerDN" class="">getManagerDN()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_setMemberOf" class="">setMemberOf()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_getMemberOf" class="">getMemberOf()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_setMobilePhone" class="">setMobilePhone()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_getMobilePhone" class="">getMobilePhone()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_setOffice" class="">setOffice()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_getOffice" class="">getOffice()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_setOfficePhone" class="">setOfficePhone()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_getOfficePhone" class="">getOfficePhone()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_setState" class="">setState()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_getState" class="">getState()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_setStreet" class="">setStreet()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_getStreet" class="">getStreet()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_setTitle" class="">setTitle()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_getTitle" class="">getTitle()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_setUid" class="">setUid()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_getUid" class="">getUid()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_setUserName" class="">setUserName()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_getUserName" class="">getUserName()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_setZip" class="">setZip()</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#method_getZip" class="">getZip()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/STS.AD.ADUser.html#property_firstName" class="">$firstName</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#property_lastName" class="">$lastName</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#property_displayName" class="">$displayName</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#property_cn" class="">$cn</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#property_empId" class="">$empId</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#property_userName" class="">$userName</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#property_uid" class="">$uid</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#property_dn" class="">$dn</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#property_memberOf" class="">$memberOf</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#property_managedObjects" class="">$managedObjects</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#property_street" class="">$street</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#property_city" class="">$city</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#property_state" class="">$state</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#property_country" class="">$country</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#property_zip" class="">$zip</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#property_title" class="">$title</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#property_dept" class="">$dept</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#property_company" class="">$company</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#property_descr" class="">$descr</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#property_office" class="">$office</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#property_email" class="">$email</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#property_officePhone" class="">$officePhone</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#property_homePhone" class="">$homePhone</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#property_mobilePhone" class="">$mobilePhone</a><br />
+                                                                    <a href="../classes/STS.AD.ADUser.html#property_managerDN" class="">$managerDN</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No private properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/STS.AD.ADUser.php.html"><div class="path-wrapper">STS/AD/ADUser.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">\Default</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\STS\AD\ADUser</div>
+                            </dd>
+
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr><td colspan="2"><em>None found</em></td></tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_firstName" name="property_firstName" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$firstName</h3>
+                <pre class="signature">$firstName</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_lastName" name="property_lastName" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$lastName</h3>
+                <pre class="signature">$lastName</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_displayName" name="property_displayName" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$displayName</h3>
+                <pre class="signature">$displayName</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_cn" name="property_cn" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$cn</h3>
+                <pre class="signature">$cn</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_empId" name="property_empId" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$empId</h3>
+                <pre class="signature">$empId</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_userName" name="property_userName" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$userName</h3>
+                <pre class="signature">$userName</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_uid" name="property_uid" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$uid</h3>
+                <pre class="signature">$uid</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_dn" name="property_dn" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$dn</h3>
+                <pre class="signature">$dn</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_memberOf" name="property_memberOf" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$memberOf</h3>
+                <pre class="signature">$memberOf</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_managedObjects" name="property_managedObjects" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$managedObjects</h3>
+                <pre class="signature">$managedObjects</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_street" name="property_street" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$street</h3>
+                <pre class="signature">$street</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_city" name="property_city" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$city</h3>
+                <pre class="signature">$city</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_state" name="property_state" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$state</h3>
+                <pre class="signature">$state</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_country" name="property_country" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$country</h3>
+                <pre class="signature">$country</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_zip" name="property_zip" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$zip</h3>
+                <pre class="signature">$zip</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_title" name="property_title" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$title</h3>
+                <pre class="signature">$title</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_dept" name="property_dept" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$dept</h3>
+                <pre class="signature">$dept</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_company" name="property_company" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$company</h3>
+                <pre class="signature">$company</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_descr" name="property_descr" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$descr</h3>
+                <pre class="signature">$descr</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_office" name="property_office" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$office</h3>
+                <pre class="signature">$office</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_email" name="property_email" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$email</h3>
+                <pre class="signature">$email</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_officePhone" name="property_officePhone" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$officePhone</h3>
+                <pre class="signature">$officePhone</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_homePhone" name="property_homePhone" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$homePhone</h3>
+                <pre class="signature">$homePhone</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_mobilePhone" name="property_mobilePhone" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$mobilePhone</h3>
+                <pre class="signature">$mobilePhone</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_managerDN" name="property_managerDN" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$managerDN</h3>
+                <pre class="signature">$managerDN</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___toString" name="method___toString" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__toString()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__toString()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_toObject" name="method_toObject" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">toObject()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">toObject()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_get" name="method_get" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">get()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">get( <span class="argument">$prop</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$prop</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_set" name="method_set" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">set()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">set( <span class="argument">$prop</span>,  <span class="argument">$value</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$prop</td>
+                                <td>
+</td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$value</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setCity" name="method_setCity" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setCity()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setCity( <span class="argument">$city</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$city</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getCity" name="method_getCity" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getCity()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getCity()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setCn" name="method_setCn" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setCn()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setCn( <span class="argument">$cn</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$cn</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getCn" name="method_getCn" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getCn()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getCn()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setCompany" name="method_setCompany" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setCompany()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setCompany( <span class="argument">$company</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$company</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getCompany" name="method_getCompany" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getCompany()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getCompany()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setCountry" name="method_setCountry" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setCountry()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setCountry( <span class="argument">$country</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$country</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getCountry" name="method_getCountry" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getCountry()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getCountry()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setDept" name="method_setDept" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setDept()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setDept( <span class="argument">$dept</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$dept</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getDept" name="method_getDept" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getDept()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getDept()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setDescr" name="method_setDescr" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setDescr()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setDescr( <span class="argument">$descr</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$descr</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getDescr" name="method_getDescr" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getDescr()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getDescr()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setDisplayName" name="method_setDisplayName" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setDisplayName()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setDisplayName( <span class="argument">$displayName</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$displayName</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getDisplayName" name="method_getDisplayName" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getDisplayName()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getDisplayName()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setDn" name="method_setDn" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setDn()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setDn( <span class="argument">$dn</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$dn</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getDn" name="method_getDn" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getDn()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getDn()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setEmail" name="method_setEmail" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setEmail()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setEmail( <span class="argument">$email</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$email</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getEmail" name="method_getEmail" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getEmail()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getEmail()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setEmpId" name="method_setEmpId" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setEmpId()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setEmpId( <span class="argument">$empId</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$empId</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getEmpId" name="method_getEmpId" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getEmpId()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getEmpId()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setFirstName" name="method_setFirstName" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setFirstName()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setFirstName( <span class="argument">$firstName</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$firstName</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getFirstName" name="method_getFirstName" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getFirstName()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getFirstName()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setHomePhone" name="method_setHomePhone" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setHomePhone()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setHomePhone( <span class="argument">$homePhone</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$homePhone</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getHomePhone" name="method_getHomePhone" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getHomePhone()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getHomePhone()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setLastName" name="method_setLastName" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setLastName()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setLastName( <span class="argument">$lastName</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$lastName</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getLastName" name="method_getLastName" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getLastName()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getLastName()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setManagedObjects" name="method_setManagedObjects" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setManagedObjects()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setManagedObjects( <span class="argument">$managedObjects</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$managedObjects</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getManagedObjects" name="method_getManagedObjects" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getManagedObjects()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getManagedObjects()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setManagerDN" name="method_setManagerDN" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setManagerDN()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setManagerDN( <span class="argument">$managerDN</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$managerDN</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getManagerDN" name="method_getManagerDN" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getManagerDN()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getManagerDN()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setMemberOf" name="method_setMemberOf" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setMemberOf()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setMemberOf( <span class="argument">$memberOf</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$memberOf</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getMemberOf" name="method_getMemberOf" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getMemberOf()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getMemberOf()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setMobilePhone" name="method_setMobilePhone" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setMobilePhone()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setMobilePhone( <span class="argument">$mobilePhone</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$mobilePhone</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getMobilePhone" name="method_getMobilePhone" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getMobilePhone()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getMobilePhone()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setOffice" name="method_setOffice" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setOffice()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setOffice( <span class="argument">$office</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$office</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getOffice" name="method_getOffice" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getOffice()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getOffice()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setOfficePhone" name="method_setOfficePhone" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setOfficePhone()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setOfficePhone( <span class="argument">$officePhone</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$officePhone</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getOfficePhone" name="method_getOfficePhone" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getOfficePhone()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getOfficePhone()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setState" name="method_setState" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setState()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setState( <span class="argument">$state</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$state</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getState" name="method_getState" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getState()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getState()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setStreet" name="method_setStreet" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setStreet()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setStreet( <span class="argument">$street</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$street</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getStreet" name="method_getStreet" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getStreet()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getStreet()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setTitle" name="method_setTitle" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setTitle()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setTitle( <span class="argument">$title</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$title</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getTitle" name="method_getTitle" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getTitle()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getTitle()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setUid" name="method_setUid" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setUid()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setUid( <span class="argument">$uid</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$uid</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getUid" name="method_getUid" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getUid()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getUid()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setUserName" name="method_setUserName" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setUserName()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setUserName( <span class="argument">$userName</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$userName</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getUserName" name="method_getUserName" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getUserName()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getUserName()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setZip" name="method_setZip" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setZip()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setZip( <span class="argument">$zip</span>)</pre>
+                <p><em></em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$zip</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getZip" name="method_getZip" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getZip()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getZip()</pre>
+                <p><em></em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">ADUser.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/STS/AD/ADUser.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/STS.html">\STS</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="">Errors</a></li>
+                                    <li><a href="">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on September 19th, 2013 at 15:05.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

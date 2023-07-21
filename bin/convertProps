@@ -1,0 +1,80 @@
+#!/usr/bin/php
+<?php
+/*******************************************************************************
+ *
+ * $Id: convertProps 74751 2013-04-26 14:09:24Z rcallaha $
+ * $Date: 2013-04-26 10:09:24 -0400 (Fri, 26 Apr 2013) $
+ * $Author: rcallaha $
+ * $Revision: 74751 $
+ * $HeadURL: https://svn.ultradns.net/svn/sts_tools/sts-lib/trunk/bin/convertProps $
+ *
+ *******************************************************************************
+ */
+
+try
+{
+	$stdin = fopen('php://stdin', 'r');
+
+	$string = "";
+	$done = false;
+	while(!feof($stdin) && !$done) {
+		$line = trim(fgets($stdin));
+		$string .= $line;
+		if (preg_match('/;/', $line)) $done = true;
+	}
+
+	$modelNames = toArray($string);
+
+	$string = "";
+	$done = false;
+	while(!feof($stdin) && !$done) {
+		$line = trim(fgets($stdin));
+		if (preg_match('/^\s+$/', $line)) continue;
+		$string .= $line;
+		if (preg_match('/;/', $line)) $done = true;
+	}
+
+	$cmdbNames = toArray($string);
+
+	fclose($stdin);
+
+	$string = "protected static \$nameMapping = array(\n";
+	for ($i=0; $i<count($cmdbNames); $i++) {
+		$string .= "'" . $cmdbNames[$i] . "' => '" . $modelNames[$i] . "'," . "\n";
+	}
+	$string .= ");\n";
+
+	print $string . "\n";
+}
+
+catch(Exception $e)
+{
+	print_r(
+		array(
+			"returnCode" => 1,
+			"errorCode"  => $e->getCode(),
+			"errorText"  => $e->getMessage(),
+			"errorFile"  => $e->getFile(),
+			"errorLine"  => $e->getLine(),
+			"errorStack" => $e->getTraceAsString()
+			)
+		);
+}
+
+
+function toArray($str) {
+	$arr = array();
+
+	$str = preg_replace('/protected static \S+ = array\(/', '', $str);
+	$str = str_replace(');', '', $str);
+	$str = str_replace("/\n/", ' ', $str);
+
+	$names = explode(',', $str);
+	for ($i=0; $i<count($names); $i++) {
+		$n = trim($names[$i]);
+		$n = str_replace('"', '', $n);
+		$arr[] = $n;
+	}
+	return $arr;
+}
+?>
